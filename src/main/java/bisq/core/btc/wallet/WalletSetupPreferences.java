@@ -17,21 +17,20 @@
 
 package bisq.core.btc.wallet;
 
+import bisq.common.util.Utilities;
 import bisq.core.btc.BitcoinNodes;
 import bisq.core.btc.BitcoinNodes.BitcoinNodesOption;
 import bisq.core.btc.BitcoinNodes.BtcNode;
 import bisq.core.user.Preferences;
-
-import bisq.common.util.Utilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static bisq.core.btc.BitcoinNodes.BitcoinNodesOption.CUSTOM;
+import static bisq.core.btc.wallet.WalletsSetup.DEFAULT_CONNECTIONS;
 
 
 class WalletSetupPreferences {
@@ -87,7 +86,7 @@ class WalletSetupPreferences {
                 break;
             case PUBLIC:
                 // We keep the empty nodes
-                result = (int) Math.floor(WalletsSetup.DEFAULT_CONNECTIONS * 0.8);
+                result = (int) Math.floor(DEFAULT_CONNECTIONS * 0.8);
                 break;
             case PROVIDED:
             default:

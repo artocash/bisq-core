@@ -17,15 +17,14 @@
 
 package bisq.core.arbitration;
 
-import bisq.network.p2p.NodeAddress;
-
 import bisq.common.crypto.PubKeyRing;
-
+import bisq.network.p2p.NodeAddress;
 import com.google.common.collect.Lists;
+import org.junit.Ignore;
 
 import java.util.Date;
 
-import org.junit.Ignore;
+import static bisq.core.arbitration.ArbitratorTest.getBytes;
 
 public class MediatorTest {
 
@@ -40,10 +39,10 @@ public class MediatorTest {
 
     public static Mediator getMediatorMock() {
         return new Mediator(new NodeAddress("host", 1000),
-                new PubKeyRing(ArbitratorTest.getBytes(100), ArbitratorTest.getBytes(100), "key"),
+                new PubKeyRing(getBytes(100), getBytes(100), "key"),
                 Lists.newArrayList(),
                 new Date().getTime(),
-                ArbitratorTest.getBytes(100),
+                getBytes(100),
                 "registrationSignature",
                 "email",
                 "info",

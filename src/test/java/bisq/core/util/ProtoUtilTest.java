@@ -32,7 +32,7 @@ import static org.junit.Assert.fail;
 @SuppressWarnings("UnusedAssignment")
 public class ProtoUtilTest {
 
-    //TODO Use NetworkProtoResolver, PersistenceProtoResolver or ProtoResolver which are all in io.bisq.common.
+    //TODO Use NetworkProtoResolver, PersistenceProtoResolver or ProtoResolver which are all in bisq.common.
     @Test
     public void testEnum() {
         OfferPayload.Direction direction = OfferPayload.Direction.SELL;

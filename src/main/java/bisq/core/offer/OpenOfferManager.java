@@ -77,7 +77,6 @@ import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-
 public class OpenOfferManager implements PeerManager.Listener, DecryptedDirectMessageListener, PersistedDataHost {
     private static final Logger log = LoggerFactory.getLogger(OpenOfferManager.class);
 

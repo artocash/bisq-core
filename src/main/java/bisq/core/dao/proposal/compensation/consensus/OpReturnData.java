@@ -29,6 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class OpReturnData {
+
     public static byte[] getBytes(String input) {
         try (ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
             byte[] dataAndSigAsBytes = input.getBytes();

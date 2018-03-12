@@ -17,38 +17,26 @@
 
 package bisq.core.dao.proposal;
 
-import bisq.core.dao.proposal.compensation.CompensationRequestPayload;
-import bisq.core.dao.proposal.generic.GenericProposalPayload;
-
-import bisq.network.p2p.NodeAddress;
-import bisq.network.p2p.storage.payload.CapabilityRequiringPayload;
-import bisq.network.p2p.storage.payload.LazyProcessedPayload;
-import bisq.network.p2p.storage.payload.PersistableProtectedPayload;
-
 import bisq.common.app.Capabilities;
 import bisq.common.app.Version;
 import bisq.common.crypto.Sig;
 import bisq.common.proto.ProtobufferException;
 import bisq.common.util.JsonExclude;
-
+import bisq.core.dao.proposal.compensation.CompensationRequestPayload;
+import bisq.core.dao.proposal.generic.GenericProposalPayload;
+import bisq.network.p2p.NodeAddress;
+import bisq.network.p2p.storage.payload.CapabilityRequiringPayload;
+import bisq.network.p2p.storage.payload.LazyProcessedPayload;
+import bisq.network.p2p.storage.payload.PersistableProtectedPayload;
 import io.bisq.generated.protobuffer.PB;
-
-import org.bitcoinj.core.Utils;
-
-import java.security.PublicKey;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.concurrent.TimeUnit;
-
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Utils;
 
 import javax.annotation.Nullable;
+import java.security.PublicKey;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Payload sent over wire as well as it gets persisted, containing all base data for a compensation request
