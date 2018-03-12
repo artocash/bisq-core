@@ -23,16 +23,22 @@ import bisq.core.provider.price.PriceFeedService;
 import bisq.core.trade.Tradable;
 import bisq.core.trade.TradableList;
 import bisq.core.trade.Trade;
-import com.google.common.collect.ImmutableList;
+
+import bisq.common.crypto.KeyRing;
+import bisq.common.proto.persistable.PersistedDataHost;
+import bisq.common.proto.persistable.PersistenceProtoResolver;
+import bisq.common.storage.Storage;
+
 import com.google.inject.Inject;
-import io.bisq.common.crypto.KeyRing;
-import io.bisq.common.proto.persistable.PersistedDataHost;
-import io.bisq.common.proto.persistable.PersistenceProtoResolver;
-import io.bisq.common.storage.Storage;
-import javafx.collections.ObservableList;
 
 import javax.inject.Named;
+
+import com.google.common.collect.ImmutableList;
+
+import javafx.collections.ObservableList;
+
 import java.io.File;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

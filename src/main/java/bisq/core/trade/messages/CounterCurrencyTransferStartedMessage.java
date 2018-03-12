@@ -17,17 +17,24 @@
 
 package bisq.core.trade.messages;
 
+import bisq.network.p2p.MailboxMessage;
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.app.Version;
+import bisq.common.util.Utilities;
+
 import com.google.protobuf.ByteString;
-import io.bisq.common.app.Version;
-import io.bisq.common.util.Utilities;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.MailboxMessage;
-import io.bisq.network.p2p.NodeAddress;
+
+import java.util.Optional;
+
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 
 import javax.annotation.Nullable;
-import java.util.Optional;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @Value

@@ -17,9 +17,13 @@
 
 package bisq.core.user;
 
+import bisq.common.proto.persistable.PersistablePayload;
+
 import com.google.protobuf.Message;
-import io.bisq.common.proto.persistable.PersistablePayload;
-import io.bisq.generated.protobuffer.PB;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 public final class BlockChainExplorer implements PersistablePayload {
     public final String name;

@@ -20,7 +20,9 @@ package bisq.core.trade.protocol.tasks.taker;
 import bisq.core.trade.Trade;
 import bisq.core.trade.protocol.MediatorSelectionRule;
 import bisq.core.trade.protocol.tasks.TradeTask;
-import io.bisq.common.taskrunner.TaskRunner;
+
+import bisq.common.taskrunner.TaskRunner;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

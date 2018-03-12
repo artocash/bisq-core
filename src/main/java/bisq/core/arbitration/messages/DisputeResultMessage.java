@@ -18,13 +18,17 @@
 package bisq.core.arbitration.messages;
 
 import bisq.core.arbitration.DisputeResult;
-import io.bisq.common.app.Version;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.NodeAddress;
+
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.app.Version;
+
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 
-import static com.google.common.base.Preconditions.checkArgument;
+
+
+import bisq.generated.protobuffer.PB;
 
 @Value
 @EqualsAndHashCode(callSuper = true)

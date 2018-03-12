@@ -1,7 +1,9 @@
 package bisq.core.btc.blockchain.providers;
 
 import bisq.core.provider.HttpClientProvider;
-import io.bisq.network.http.HttpClient;
+
+import bisq.network.http.HttpClient;
+
 import org.bitcoinj.core.Coin;
 
 import java.io.IOException;

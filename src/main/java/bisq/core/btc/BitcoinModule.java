@@ -18,16 +18,24 @@
 package bisq.core.btc;
 
 import bisq.core.app.AppOptionKeys;
-import bisq.core.btc.wallet.*;
+import bisq.core.btc.wallet.BsqCoinSelector;
+import bisq.core.btc.wallet.BsqWalletService;
+import bisq.core.btc.wallet.BtcWalletService;
+import bisq.core.btc.wallet.TradeWalletService;
+import bisq.core.btc.wallet.WalletsSetup;
 import bisq.core.provider.ProvidersRepository;
 import bisq.core.provider.fee.FeeProvider;
 import bisq.core.provider.fee.FeeService;
 import bisq.core.provider.price.PriceFeedService;
+
+import bisq.network.http.HttpClient;
+
+import bisq.common.app.AppModule;
+
+import org.springframework.core.env.Environment;
+
 import com.google.inject.Singleton;
 import com.google.inject.name.Names;
-import io.bisq.common.app.AppModule;
-import io.bisq.network.http.HttpClient;
-import org.springframework.core.env.Environment;
 
 import java.io.File;
 

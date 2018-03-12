@@ -17,10 +17,13 @@
 
 package bisq.core.offer;
 
-import com.google.inject.Singleton;
-import io.bisq.common.app.AppModule;
-import lombok.extern.slf4j.Slf4j;
+import bisq.common.app.AppModule;
+
 import org.springframework.core.env.Environment;
+
+import com.google.inject.Singleton;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class OfferModule extends AppModule {

@@ -17,14 +17,19 @@
 
 package bisq.core.btc.data;
 
+import bisq.common.proto.network.NetworkPayload;
+import bisq.common.proto.persistable.PersistablePayload;
+import bisq.common.util.Utilities;
+
 import com.google.protobuf.ByteString;
-import io.bisq.common.proto.network.NetworkPayload;
-import io.bisq.common.proto.persistable.PersistablePayload;
-import io.bisq.common.util.Utilities;
-import io.bisq.generated.protobuffer.PB;
+
 import lombok.EqualsAndHashCode;
 
 import javax.annotation.concurrent.Immutable;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode
 @Immutable

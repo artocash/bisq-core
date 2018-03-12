@@ -17,7 +17,8 @@
 
 package bisq.core.util;
 
-import io.bisq.common.util.MathUtils;
+import bisq.common.util.MathUtils;
+
 import org.bitcoinj.core.Coin;
 
 public class CoinUtil {

@@ -19,10 +19,13 @@ package bisq.core.offer.availability;
 
 import bisq.core.offer.Offer;
 import bisq.core.offer.messages.OfferAvailabilityResponse;
-import io.bisq.common.crypto.PubKeyRing;
-import io.bisq.common.taskrunner.Model;
-import io.bisq.network.p2p.NodeAddress;
-import io.bisq.network.p2p.P2PService;
+
+import bisq.network.p2p.NodeAddress;
+import bisq.network.p2p.P2PService;
+
+import bisq.common.crypto.PubKeyRing;
+import bisq.common.taskrunner.Model;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

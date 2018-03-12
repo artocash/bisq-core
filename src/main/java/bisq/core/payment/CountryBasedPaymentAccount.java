@@ -19,9 +19,12 @@ package bisq.core.payment;
 
 import bisq.core.payment.payload.CountryBasedPaymentAccountPayload;
 import bisq.core.payment.payload.PaymentMethod;
-import io.bisq.common.locale.Country;
-import io.bisq.common.locale.CountryUtil;
+
+import bisq.common.locale.Country;
+import bisq.common.locale.CountryUtil;
+
 import lombok.EqualsAndHashCode;
+
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;

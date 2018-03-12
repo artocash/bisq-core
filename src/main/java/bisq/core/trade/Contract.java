@@ -20,22 +20,31 @@ package bisq.core.trade;
 import bisq.core.offer.OfferPayload;
 import bisq.core.payment.payload.PaymentAccountPayload;
 import bisq.core.proto.CoreProtoResolver;
+
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.crypto.PubKeyRing;
+import bisq.common.monetary.Price;
+import bisq.common.proto.network.NetworkPayload;
+import bisq.common.util.JsonExclude;
+import bisq.common.util.Utilities;
+
 import com.google.protobuf.ByteString;
-import io.bisq.common.crypto.PubKeyRing;
-import io.bisq.common.monetary.Price;
-import io.bisq.common.proto.network.NetworkPayload;
-import io.bisq.common.util.JsonExclude;
-import io.bisq.common.util.Utilities;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.NodeAddress;
+
+import org.bitcoinj.core.Coin;
+
+import org.apache.commons.lang3.StringUtils;
+
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
-import org.bitcoinj.core.Coin;
 
 import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkArgument;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @Slf4j
 @Value

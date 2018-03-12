@@ -10,23 +10,31 @@ import bisq.core.proto.CoreProtoResolver;
 import bisq.core.trade.TradableList;
 import bisq.core.user.PreferencesPayload;
 import bisq.core.user.UserPayload;
+
+import bisq.network.p2p.peers.peerexchange.PeerList;
+import bisq.network.p2p.storage.PersistableNetworkPayloadCollection;
+import bisq.network.p2p.storage.PersistedEntryMap;
+import bisq.network.p2p.storage.SequenceNumberMap;
+
+import bisq.common.proto.ProtobufferException;
+import bisq.common.proto.network.NetworkProtoResolver;
+import bisq.common.proto.persistable.NavigationPath;
+import bisq.common.proto.persistable.PersistableEnvelope;
+import bisq.common.proto.persistable.PersistenceProtoResolver;
+import bisq.common.storage.Storage;
+
 import com.google.inject.Provider;
-import io.bisq.common.proto.ProtobufferException;
-import io.bisq.common.proto.network.NetworkProtoResolver;
-import io.bisq.common.proto.persistable.NavigationPath;
-import io.bisq.common.proto.persistable.PersistableEnvelope;
-import io.bisq.common.proto.persistable.PersistenceProtoResolver;
-import io.bisq.common.storage.Storage;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.peers.peerexchange.PeerList;
-import io.bisq.network.p2p.storage.PersistableNetworkPayloadCollection;
-import io.bisq.network.p2p.storage.PersistedEntryMap;
-import io.bisq.network.p2p.storage.SequenceNumberMap;
-import lombok.extern.slf4j.Slf4j;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import java.io.File;
+
+import lombok.extern.slf4j.Slf4j;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @Slf4j
 public class CorePersistenceProtoResolver extends CoreProtoResolver implements PersistenceProtoResolver {

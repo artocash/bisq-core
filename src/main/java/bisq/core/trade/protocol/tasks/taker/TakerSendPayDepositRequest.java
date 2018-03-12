@@ -24,17 +24,20 @@ import bisq.core.trade.Trade;
 import bisq.core.trade.messages.PayDepositRequest;
 import bisq.core.trade.protocol.tasks.TradeTask;
 import bisq.core.user.User;
-import io.bisq.common.app.Version;
-import io.bisq.common.crypto.Sig;
-import io.bisq.common.taskrunner.TaskRunner;
-import io.bisq.network.p2p.NodeAddress;
-import io.bisq.network.p2p.SendDirectMessageListener;
-import lombok.extern.slf4j.Slf4j;
+
+import bisq.network.p2p.NodeAddress;
+import bisq.network.p2p.SendDirectMessageListener;
+
+import bisq.common.app.Version;
+import bisq.common.crypto.Sig;
+import bisq.common.taskrunner.TaskRunner;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+
+import lombok.extern.slf4j.Slf4j;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;

@@ -27,13 +27,19 @@ import bisq.core.trade.Trade;
 import bisq.core.trade.protocol.ArbitratorSelectionRule;
 import bisq.core.trade.protocol.tasks.TradeTask;
 import bisq.core.user.User;
-import com.google.common.util.concurrent.FutureCallback;
-import io.bisq.common.UserThread;
-import io.bisq.common.taskrunner.TaskRunner;
-import io.bisq.network.p2p.NodeAddress;
-import lombok.extern.slf4j.Slf4j;
+
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.UserThread;
+import bisq.common.taskrunner.TaskRunner;
+
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.Transaction;
+
+import com.google.common.util.concurrent.FutureCallback;
+
+import lombok.extern.slf4j.Slf4j;
+
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;

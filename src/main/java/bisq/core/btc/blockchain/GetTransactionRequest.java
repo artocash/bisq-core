@@ -1,16 +1,25 @@
 package bisq.core.btc.blockchain;
 
 import bisq.core.btc.blockchain.providers.BlockchainTxProvider;
-import com.google.common.util.concurrent.*;
-import io.bisq.common.Timer;
-import io.bisq.common.UserThread;
-import io.bisq.common.util.Utilities;
+
+import bisq.common.Timer;
+import bisq.common.UserThread;
+import bisq.common.util.Utilities;
+
 import org.bitcoinj.core.Coin;
-import org.jetbrains.annotations.NotNull;
+
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+import com.google.common.util.concurrent.ListeningExecutorService;
+import com.google.common.util.concurrent.SettableFuture;
+
+import java.io.IOException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
+import org.jetbrains.annotations.NotNull;
 
 class GetTransactionRequest {
     private static final Logger log = LoggerFactory.getLogger(GetTransactionRequest.class);

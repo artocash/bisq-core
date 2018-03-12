@@ -22,7 +22,9 @@ import bisq.core.btc.wallet.BsqWalletService;
 import bisq.core.provider.fee.FeeService;
 import bisq.core.user.Preferences;
 import bisq.core.util.CoinUtil;
-import io.bisq.common.util.MathUtils;
+
+import bisq.common.util.MathUtils;
+
 import org.bitcoinj.core.Coin;
 
 import javax.annotation.Nullable;

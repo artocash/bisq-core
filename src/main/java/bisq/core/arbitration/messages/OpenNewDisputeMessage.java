@@ -19,11 +19,17 @@ package bisq.core.arbitration.messages;
 
 import bisq.core.arbitration.Dispute;
 import bisq.core.proto.CoreProtoResolver;
-import io.bisq.common.app.Version;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.NodeAddress;
+
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.app.Version;
+
 import lombok.EqualsAndHashCode;
 import lombok.Value;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @Value

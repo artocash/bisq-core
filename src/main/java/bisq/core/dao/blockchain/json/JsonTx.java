@@ -17,10 +17,11 @@
 
 package bisq.core.dao.blockchain.json;
 
-import io.bisq.common.app.Version;
-import lombok.Value;
+import bisq.common.app.Version;
 
 import java.util.List;
+
+import lombok.Value;
 
 @Value
 public class JsonTx {

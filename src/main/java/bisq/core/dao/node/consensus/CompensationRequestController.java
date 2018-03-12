@@ -22,7 +22,8 @@ import bisq.core.dao.blockchain.vo.Tx;
 import bisq.core.dao.blockchain.vo.TxOutput;
 import bisq.core.dao.blockchain.vo.TxOutputType;
 import bisq.core.dao.blockchain.vo.TxType;
-import io.bisq.common.app.Version;
+
+import bisq.common.app.Version;
 
 import javax.inject.Inject;
 

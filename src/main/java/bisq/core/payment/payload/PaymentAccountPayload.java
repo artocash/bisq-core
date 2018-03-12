@@ -17,26 +17,33 @@
 
 package bisq.core.payment.payload;
 
-import io.bisq.common.consensus.UsedForTradeContractJson;
-import io.bisq.common.crypto.CryptoUtils;
-import io.bisq.common.proto.network.NetworkPayload;
-import io.bisq.common.util.JsonExclude;
-import io.bisq.common.util.Utilities;
-import io.bisq.generated.protobuffer.PB;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
+import bisq.common.consensus.UsedForTradeContractJson;
+import bisq.common.crypto.CryptoUtils;
+import bisq.common.proto.network.NetworkPayload;
+import bisq.common.util.JsonExclude;
+import bisq.common.util.Utilities;
+
 import org.apache.commons.lang3.ArrayUtils;
 
-import javax.annotation.Nullable;
 import java.nio.charset.Charset;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.annotation.Nullable;
+
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 // That class is used in the contract for creating the contract json. Any change will break the contract.
 // If a field gets added it need to be be annotated with @JsonExclude (excluded from contract).

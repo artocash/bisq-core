@@ -30,41 +30,58 @@ import bisq.core.proto.CoreProtoResolver;
 import bisq.core.trade.protocol.ProcessModel;
 import bisq.core.trade.protocol.TradeProtocol;
 import bisq.core.user.User;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
+
+import bisq.network.p2p.DecryptedMessageWithPubKey;
+import bisq.network.p2p.NodeAddress;
+import bisq.network.p2p.P2PService;
+
+import bisq.common.app.Log;
+import bisq.common.crypto.KeyRing;
+import bisq.common.crypto.PubKeyRing;
+import bisq.common.monetary.Price;
+import bisq.common.monetary.Volume;
+import bisq.common.proto.ProtoUtil;
+import bisq.common.storage.Storage;
+import bisq.common.taskrunner.Model;
+import bisq.common.util.Utilities;
+
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Message;
-import io.bisq.common.app.Log;
-import io.bisq.common.crypto.KeyRing;
-import io.bisq.common.crypto.PubKeyRing;
-import io.bisq.common.monetary.Price;
-import io.bisq.common.monetary.Volume;
-import io.bisq.common.proto.ProtoUtil;
-import io.bisq.common.storage.Storage;
-import io.bisq.common.taskrunner.Model;
-import io.bisq.common.util.Utilities;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.DecryptedMessageWithPubKey;
-import io.bisq.network.p2p.NodeAddress;
-import io.bisq.network.p2p.P2PService;
-import javafx.beans.property.*;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
+
 import org.bitcoinj.core.Coin;
 import org.bitcoinj.core.Sha256Hash;
 import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.TransactionConfidence;
-import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
+
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.ReadOnlyObjectProperty;
+import javafx.beans.property.ReadOnlyStringProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
+
 import static com.google.common.base.Preconditions.checkNotNull;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 /**
  * Holds all data which are relevant to the trade, but not those which are only needed in the trade process as shared data between tasks. Those data are

@@ -3,16 +3,21 @@ package bisq.core.trade;
 import bisq.core.offer.Offer;
 import bisq.core.offer.OfferPayload;
 import bisq.core.offer.OpenOffer;
-import io.bisq.common.storage.Storage;
-import io.bisq.generated.protobuffer.PB;
+
+import bisq.common.storage.Storage;
+
 import mockit.Mocked;
 import mockit.integration.junit4.JMockit;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static io.bisq.generated.protobuffer.PB.PersistableEnvelope.MessageCase.TRADABLE_LIST;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 /*
  * This file is part of Bisq.

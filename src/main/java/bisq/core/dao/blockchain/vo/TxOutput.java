@@ -19,16 +19,24 @@ package bisq.core.dao.blockchain.vo;
 
 import bisq.core.dao.blockchain.btcd.PubKeyScript;
 import bisq.core.dao.blockchain.vo.util.TxIdIndexTuple;
+
+import bisq.common.proto.persistable.PersistablePayload;
+import bisq.common.util.JsonExclude;
+
 import com.google.protobuf.ByteString;
-import io.bisq.common.proto.persistable.PersistablePayload;
-import io.bisq.common.util.JsonExclude;
-import io.bisq.generated.protobuffer.PB;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
+
 import org.bitcoinj.core.Utils;
 
-import javax.annotation.Nullable;
 import java.util.Optional;
+
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.annotation.Nullable;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @Data
 @Slf4j

@@ -20,7 +20,9 @@ package bisq.core.payment;
 import bisq.core.payment.payload.PaymentAccountPayload;
 import bisq.core.payment.payload.PaymentMethod;
 import bisq.core.payment.payload.UpholdAccountPayload;
-import io.bisq.common.locale.CurrencyUtil;
+
+import bisq.common.locale.CurrencyUtil;
+
 import lombok.EqualsAndHashCode;
 
 //TODO missing support for selected trade currency

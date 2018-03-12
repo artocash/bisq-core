@@ -27,10 +27,14 @@ import bisq.core.dao.blockchain.vo.BsqBlock;
 import bisq.core.dao.node.BsqNode;
 import bisq.core.dao.node.full.network.FullNodeNetworkManager;
 import bisq.core.provider.fee.FeeService;
+
+import bisq.network.p2p.P2PService;
+
+import bisq.common.UserThread;
+import bisq.common.handlers.ErrorMessageHandler;
+
 import com.google.inject.Inject;
-import io.bisq.common.UserThread;
-import io.bisq.common.handlers.ErrorMessageHandler;
-import io.bisq.network.p2p.P2PService;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**

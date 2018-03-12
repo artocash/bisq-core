@@ -19,22 +19,26 @@ package bisq.core.arbitration;
 
 import bisq.core.app.BisqEnvironment;
 import bisq.core.filter.FilterManager;
-import io.bisq.common.app.DevEnv;
-import io.bisq.common.handlers.ErrorMessageHandler;
-import io.bisq.common.handlers.ResultHandler;
-import io.bisq.common.util.Utilities;
-import io.bisq.network.p2p.NodeAddress;
-import io.bisq.network.p2p.P2PService;
-import io.bisq.network.p2p.storage.HashMapChangedListener;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
+import bisq.network.p2p.NodeAddress;
+import bisq.network.p2p.P2PService;
+import bisq.network.p2p.storage.HashMapChangedListener;
+
+import bisq.common.app.DevEnv;
+import bisq.common.handlers.ErrorMessageHandler;
+import bisq.common.handlers.ResultHandler;
+import bisq.common.util.Utilities;
 
 import javax.inject.Inject;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Used to store arbitrators profile and load map of arbitrators

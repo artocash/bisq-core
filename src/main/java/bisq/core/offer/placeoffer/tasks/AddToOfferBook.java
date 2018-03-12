@@ -18,8 +18,10 @@
 package bisq.core.offer.placeoffer.tasks;
 
 import bisq.core.offer.placeoffer.PlaceOfferModel;
-import io.bisq.common.taskrunner.Task;
-import io.bisq.common.taskrunner.TaskRunner;
+
+import bisq.common.taskrunner.Task;
+import bisq.common.taskrunner.TaskRunner;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

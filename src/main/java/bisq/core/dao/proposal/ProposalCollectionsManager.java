@@ -27,28 +27,39 @@ import bisq.core.dao.blockchain.ReadableBsqBlockChain;
 import bisq.core.dao.proposal.compensation.CompensationRequest;
 import bisq.core.dao.proposal.generic.GenericProposal;
 import bisq.core.provider.fee.FeeService;
-import com.google.common.util.concurrent.FutureCallback;
+
+import bisq.network.p2p.P2PService;
+import bisq.network.p2p.storage.HashMapChangedListener;
+import bisq.network.p2p.storage.payload.ProtectedStorageEntry;
+import bisq.network.p2p.storage.payload.ProtectedStoragePayload;
+
+import bisq.common.app.DevEnv;
+import bisq.common.crypto.KeyRing;
+import bisq.common.proto.persistable.PersistedDataHost;
+import bisq.common.storage.Storage;
+
+import org.bitcoinj.core.Transaction;
+
 import com.google.inject.Inject;
-import io.bisq.common.app.DevEnv;
-import io.bisq.common.crypto.KeyRing;
-import io.bisq.common.proto.persistable.PersistedDataHost;
-import io.bisq.common.storage.Storage;
-import io.bisq.network.p2p.P2PService;
-import io.bisq.network.p2p.storage.HashMapChangedListener;
-import io.bisq.network.p2p.storage.payload.ProtectedStorageEntry;
-import io.bisq.network.p2p.storage.payload.ProtectedStoragePayload;
+
+import com.google.common.util.concurrent.FutureCallback;
+
 import javafx.beans.value.ChangeListener;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+
+import java.security.PublicKey;
+
+import java.util.Optional;
+
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import org.bitcoinj.core.Transaction;
+
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-import java.security.PublicKey;
-import java.util.Optional;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

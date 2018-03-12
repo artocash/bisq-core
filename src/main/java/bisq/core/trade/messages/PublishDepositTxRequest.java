@@ -20,21 +20,29 @@ package bisq.core.trade.messages;
 import bisq.core.btc.data.RawTransactionInput;
 import bisq.core.payment.payload.PaymentAccountPayload;
 import bisq.core.proto.CoreProtoResolver;
-import com.google.protobuf.ByteString;
-import io.bisq.common.app.Version;
-import io.bisq.common.proto.ProtoUtil;
-import io.bisq.common.util.Utilities;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.MailboxMessage;
-import io.bisq.network.p2p.NodeAddress;
-import lombok.EqualsAndHashCode;
-import lombok.Value;
 
-import javax.annotation.Nullable;
+import bisq.network.p2p.MailboxMessage;
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.app.Version;
+import bisq.common.proto.ProtoUtil;
+import bisq.common.util.Utilities;
+
+import com.google.protobuf.ByteString;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+
+import javax.annotation.Nullable;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 // We use a MailboxMessage here because the taker has paid already the trade fee and it could be that
 // we lost connection to him but we are complete on our side. So even if the peer is offline he can

@@ -21,36 +21,50 @@ import bisq.core.app.AppOptionKeys;
 import bisq.core.filter.FilterManager;
 import bisq.core.user.Preferences;
 import bisq.core.user.User;
-import com.google.inject.Inject;
-import com.google.inject.name.Named;
-import io.bisq.common.Timer;
-import io.bisq.common.UserThread;
-import io.bisq.common.app.DevEnv;
-import io.bisq.common.crypto.KeyRing;
-import io.bisq.common.handlers.ErrorMessageHandler;
-import io.bisq.common.handlers.ResultHandler;
-import io.bisq.common.util.Utilities;
-import io.bisq.network.p2p.BootstrapListener;
-import io.bisq.network.p2p.NodeAddress;
-import io.bisq.network.p2p.P2PService;
-import io.bisq.network.p2p.storage.HashMapChangedListener;
-import io.bisq.network.p2p.storage.payload.ProtectedStorageEntry;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableMap;
+
+import bisq.network.p2p.BootstrapListener;
+import bisq.network.p2p.NodeAddress;
+import bisq.network.p2p.P2PService;
+import bisq.network.p2p.storage.HashMapChangedListener;
+import bisq.network.p2p.storage.payload.ProtectedStorageEntry;
+
+import bisq.common.Timer;
+import bisq.common.UserThread;
+import bisq.common.app.DevEnv;
+import bisq.common.crypto.KeyRing;
+import bisq.common.handlers.ErrorMessageHandler;
+import bisq.common.handlers.ResultHandler;
+import bisq.common.util.Utilities;
+
 import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.Utils;
-import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import javax.annotation.Nullable;
-import java.math.BigInteger;
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableMap;
+
 import java.security.PublicKey;
 import java.security.SignatureException;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import java.math.BigInteger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
 
 import static org.bitcoinj.core.Utils.HEX;
 

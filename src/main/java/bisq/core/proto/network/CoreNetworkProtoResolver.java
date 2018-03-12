@@ -4,7 +4,11 @@ import bisq.core.alert.Alert;
 import bisq.core.alert.PrivateNotificationMessage;
 import bisq.core.arbitration.Arbitrator;
 import bisq.core.arbitration.Mediator;
-import bisq.core.arbitration.messages.*;
+import bisq.core.arbitration.messages.DisputeCommunicationMessage;
+import bisq.core.arbitration.messages.DisputeResultMessage;
+import bisq.core.arbitration.messages.OpenNewDisputeMessage;
+import bisq.core.arbitration.messages.PeerOpenedDisputeMessage;
+import bisq.core.arbitration.messages.PeerPublishedDisputePayoutTxMessage;
 import bisq.core.dao.node.messages.GetBsqBlocksRequest;
 import bisq.core.dao.node.messages.GetBsqBlocksResponse;
 import bisq.core.dao.node.messages.NewBsqBlockBroadcastMessage;
@@ -14,29 +18,43 @@ import bisq.core.offer.OfferPayload;
 import bisq.core.offer.messages.OfferAvailabilityRequest;
 import bisq.core.offer.messages.OfferAvailabilityResponse;
 import bisq.core.proto.CoreProtoResolver;
-import bisq.core.trade.messages.*;
+import bisq.core.trade.messages.CounterCurrencyTransferStartedMessage;
+import bisq.core.trade.messages.DepositTxPublishedMessage;
+import bisq.core.trade.messages.PayDepositRequest;
+import bisq.core.trade.messages.PayoutTxPublishedMessage;
+import bisq.core.trade.messages.PublishDepositTxRequest;
 import bisq.core.trade.statistics.TradeStatistics;
-import io.bisq.common.proto.ProtobufferException;
-import io.bisq.common.proto.network.NetworkEnvelope;
-import io.bisq.common.proto.network.NetworkPayload;
-import io.bisq.common.proto.network.NetworkProtoResolver;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.CloseConnectionMessage;
-import io.bisq.network.p2p.PrefixedSealedAndSignedMessage;
-import io.bisq.network.p2p.peers.getdata.messages.GetDataResponse;
-import io.bisq.network.p2p.peers.getdata.messages.GetUpdatedDataRequest;
-import io.bisq.network.p2p.peers.getdata.messages.PreliminaryGetDataRequest;
-import io.bisq.network.p2p.peers.keepalive.messages.Ping;
-import io.bisq.network.p2p.peers.keepalive.messages.Pong;
-import io.bisq.network.p2p.peers.peerexchange.messages.GetPeersRequest;
-import io.bisq.network.p2p.peers.peerexchange.messages.GetPeersResponse;
-import io.bisq.network.p2p.storage.messages.*;
-import io.bisq.network.p2p.storage.payload.MailboxStoragePayload;
-import io.bisq.network.p2p.storage.payload.ProtectedMailboxStorageEntry;
-import io.bisq.network.p2p.storage.payload.ProtectedStorageEntry;
-import lombok.extern.slf4j.Slf4j;
+
+import bisq.network.p2p.CloseConnectionMessage;
+import bisq.network.p2p.PrefixedSealedAndSignedMessage;
+import bisq.network.p2p.peers.getdata.messages.GetDataResponse;
+import bisq.network.p2p.peers.getdata.messages.GetUpdatedDataRequest;
+import bisq.network.p2p.peers.getdata.messages.PreliminaryGetDataRequest;
+import bisq.network.p2p.peers.keepalive.messages.Ping;
+import bisq.network.p2p.peers.keepalive.messages.Pong;
+import bisq.network.p2p.peers.peerexchange.messages.GetPeersRequest;
+import bisq.network.p2p.peers.peerexchange.messages.GetPeersResponse;
+import bisq.network.p2p.storage.messages.AddDataMessage;
+import bisq.network.p2p.storage.messages.AddPersistableNetworkPayloadMessage;
+import bisq.network.p2p.storage.messages.RefreshOfferMessage;
+import bisq.network.p2p.storage.messages.RemoveDataMessage;
+import bisq.network.p2p.storage.messages.RemoveMailboxDataMessage;
+import bisq.network.p2p.storage.payload.MailboxStoragePayload;
+import bisq.network.p2p.storage.payload.ProtectedMailboxStorageEntry;
+import bisq.network.p2p.storage.payload.ProtectedStorageEntry;
+
+import bisq.common.proto.ProtobufferException;
+import bisq.common.proto.network.NetworkEnvelope;
+import bisq.common.proto.network.NetworkPayload;
+import bisq.common.proto.network.NetworkProtoResolver;
 
 import javax.inject.Inject;
+
+import lombok.extern.slf4j.Slf4j;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @Slf4j
 public class CoreNetworkProtoResolver extends CoreProtoResolver implements NetworkProtoResolver {

@@ -1,12 +1,17 @@
 package bisq.core.alert;
 
-import io.bisq.common.app.Version;
-import io.bisq.common.proto.network.NetworkEnvelope;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.MailboxMessage;
-import io.bisq.network.p2p.NodeAddress;
+import bisq.network.p2p.MailboxMessage;
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.app.Version;
+import bisq.common.proto.network.NetworkEnvelope;
+
 import lombok.EqualsAndHashCode;
 import lombok.Value;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @Value

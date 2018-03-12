@@ -20,11 +20,14 @@ package bisq.core.trade.protocol.tasks.taker;
 import bisq.core.trade.Trade;
 import bisq.core.trade.messages.DepositTxPublishedMessage;
 import bisq.core.trade.protocol.tasks.TradeTask;
-import io.bisq.common.taskrunner.TaskRunner;
-import io.bisq.network.p2p.SendMailboxMessageListener;
-import lombok.extern.slf4j.Slf4j;
+
+import bisq.network.p2p.SendMailboxMessageListener;
+
+import bisq.common.taskrunner.TaskRunner;
 
 import java.util.UUID;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class TakerSendDepositTxPublishedMessage extends TradeTask {

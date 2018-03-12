@@ -19,8 +19,10 @@ package bisq.core.trade.protocol;
 
 
 import bisq.core.trade.messages.TradeMessage;
-import io.bisq.common.handlers.ErrorMessageHandler;
-import io.bisq.network.p2p.NodeAddress;
+
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.handlers.ErrorMessageHandler;
 
 public interface MakerProtocol {
     void handleTakeOfferRequest(TradeMessage message, NodeAddress taker, ErrorMessageHandler errorMessageHandler);

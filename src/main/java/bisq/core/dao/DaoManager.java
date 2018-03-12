@@ -21,8 +21,10 @@ import bisq.core.app.BisqEnvironment;
 import bisq.core.dao.node.BsqNode;
 import bisq.core.dao.node.BsqNodeProvider;
 import bisq.core.dao.proposal.ProposalCollectionsManager;
+
+import bisq.common.handlers.ErrorMessageHandler;
+
 import com.google.inject.Inject;
-import io.bisq.common.handlers.ErrorMessageHandler;
 
 /**
  * High level entry point for Dao domain

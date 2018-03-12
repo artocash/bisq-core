@@ -22,19 +22,24 @@ import bisq.core.btc.RegTestHost;
 import bisq.core.dao.DaoOptionKeys;
 import bisq.core.exceptions.BisqException;
 import bisq.core.util.joptsimple.EnumValueConverter;
-import io.bisq.common.CommonOptionKeys;
-import io.bisq.network.NetworkOptionKeys;
-import io.bisq.network.p2p.P2PService;
-import joptsimple.OptionException;
-import joptsimple.OptionParser;
-import joptsimple.OptionSet;
+
+import bisq.network.NetworkOptionKeys;
+import bisq.network.p2p.P2PService;
+
+import bisq.common.CommonOptionKeys;
+
 import org.springframework.core.env.JOptCommandLinePropertySource;
 import org.springframework.util.StringUtils;
 
-import java.io.IOException;
+import joptsimple.OptionException;
+import joptsimple.OptionParser;
+import joptsimple.OptionSet;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import java.io.IOException;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 import static java.lang.String.format;

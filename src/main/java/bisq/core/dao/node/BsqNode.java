@@ -22,15 +22,19 @@ import bisq.core.dao.blockchain.ReadableBsqBlockChain;
 import bisq.core.dao.blockchain.SnapshotManager;
 import bisq.core.dao.blockchain.WritableBsqBlockChain;
 import bisq.core.provider.fee.FeeService;
+
+import bisq.network.p2p.P2PService;
+import bisq.network.p2p.P2PServiceListener;
+
+import bisq.common.handlers.ErrorMessageHandler;
+
 import com.google.inject.Inject;
-import io.bisq.common.handlers.ErrorMessageHandler;
-import io.bisq.network.p2p.P2PService;
-import io.bisq.network.p2p.P2PServiceListener;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Base class for the lite and full node.

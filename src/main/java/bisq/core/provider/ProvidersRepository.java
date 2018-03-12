@@ -19,18 +19,24 @@ package bisq.core.provider;
 
 import bisq.core.app.AppOptionKeys;
 import bisq.core.app.BisqEnvironment;
+
+import bisq.network.NetworkOptionKeys;
+
 import com.google.inject.Inject;
-import io.bisq.network.NetworkOptionKeys;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
+
+import javax.inject.Named;
+
 import org.apache.commons.lang3.StringUtils;
 
-import javax.annotation.Nullable;
-import javax.inject.Named;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.annotation.Nullable;
 
 @Slf4j
 public class ProvidersRepository {

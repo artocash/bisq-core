@@ -18,7 +18,8 @@
 package bisq.core.trade;
 
 import bisq.core.offer.Offer;
-import io.bisq.common.proto.persistable.PersistablePayload;
+
+import bisq.common.proto.persistable.PersistablePayload;
 
 import java.util.Date;
 

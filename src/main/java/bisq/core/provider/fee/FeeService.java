@@ -18,26 +18,35 @@
 package bisq.core.provider.fee;
 
 import bisq.core.app.BisqEnvironment;
+
+import bisq.common.UserThread;
+import bisq.common.handlers.FaultHandler;
+import bisq.common.util.Tuple2;
+
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.core.Transaction;
+
+import com.google.inject.Inject;
+
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.SettableFuture;
-import com.google.inject.Inject;
-import io.bisq.common.UserThread;
-import io.bisq.common.handlers.FaultHandler;
-import io.bisq.common.util.Tuple2;
+
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ReadOnlyIntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.core.Transaction;
-import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
+import java.time.Instant;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import org.jetbrains.annotations.NotNull;
+
 import javax.annotation.Nullable;
-import java.time.Instant;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

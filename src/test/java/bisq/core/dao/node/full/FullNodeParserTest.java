@@ -9,26 +9,37 @@ import bisq.core.dao.blockchain.vo.Tx;
 import bisq.core.dao.blockchain.vo.TxInput;
 import bisq.core.dao.blockchain.vo.TxOutput;
 import bisq.core.dao.blockchain.vo.util.TxIdIndexTuple;
-import bisq.core.dao.node.consensus.*;
+import bisq.core.dao.node.consensus.BsqBlockController;
+import bisq.core.dao.node.consensus.BsqTxController;
+import bisq.core.dao.node.consensus.GenesisTxController;
+import bisq.core.dao.node.consensus.TxInputsController;
+import bisq.core.dao.node.consensus.TxOutputsController;
 import bisq.core.dao.node.full.rpc.RpcService;
+
+import bisq.common.proto.persistable.PersistenceProtoResolver;
+
+import org.bitcoinj.core.Coin;
+
 import com.neemre.btcdcli4j.core.BitcoindException;
 import com.neemre.btcdcli4j.core.CommunicationException;
 import com.neemre.btcdcli4j.core.domain.Block;
-import io.bisq.common.proto.persistable.PersistenceProtoResolver;
+
+import java.io.File;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Optional;
+
+import java.math.BigDecimal;
+
 import mockit.Expectations;
 import mockit.Injectable;
 import mockit.Tested;
 import mockit.integration.junit4.JMockit;
-import org.bitcoinj.core.Coin;
+
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import java.io.File;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Optional;
 
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertFalse;

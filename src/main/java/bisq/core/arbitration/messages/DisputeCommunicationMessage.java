@@ -18,22 +18,30 @@
 package bisq.core.arbitration.messages;
 
 import bisq.core.arbitration.Attachment;
-import io.bisq.common.app.Version;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.NodeAddress;
+
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.app.Version;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ReadOnlyBooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @ToString

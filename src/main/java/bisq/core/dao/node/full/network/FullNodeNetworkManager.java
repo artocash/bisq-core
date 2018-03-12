@@ -4,20 +4,25 @@ import bisq.core.dao.blockchain.ReadableBsqBlockChain;
 import bisq.core.dao.blockchain.vo.BsqBlock;
 import bisq.core.dao.node.messages.GetBsqBlocksRequest;
 import bisq.core.dao.node.messages.NewBsqBlockBroadcastMessage;
-import io.bisq.common.UserThread;
-import io.bisq.common.app.Log;
-import io.bisq.common.proto.network.NetworkEnvelope;
-import io.bisq.network.p2p.network.Connection;
-import io.bisq.network.p2p.network.MessageListener;
-import io.bisq.network.p2p.network.NetworkNode;
-import io.bisq.network.p2p.peers.Broadcaster;
-import io.bisq.network.p2p.peers.PeerManager;
-import lombok.extern.slf4j.Slf4j;
-import org.jetbrains.annotations.Nullable;
+
+import bisq.network.p2p.network.Connection;
+import bisq.network.p2p.network.MessageListener;
+import bisq.network.p2p.network.NetworkNode;
+import bisq.network.p2p.peers.Broadcaster;
+import bisq.network.p2p.peers.PeerManager;
+
+import bisq.common.UserThread;
+import bisq.common.app.Log;
+import bisq.common.proto.network.NetworkEnvelope;
 
 import javax.inject.Inject;
+
 import java.util.HashMap;
 import java.util.Map;
+
+import lombok.extern.slf4j.Slf4j;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Responsible for handling requests for BSQ blocks from lite nodes and for broadcasting new blocks to the P2P network.

@@ -19,19 +19,29 @@ package bisq.core.dao.proposal.compensation;
 
 import bisq.core.dao.proposal.ProposalPayload;
 import bisq.core.dao.proposal.ProposalType;
-import io.bisq.common.app.Version;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.NodeAddress;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.core.Utils;
+
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.app.Version;
+
 import org.springframework.util.CollectionUtils;
 
-import javax.annotation.Nullable;
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.core.Utils;
+
 import java.security.PublicKey;
+
 import java.util.Date;
 import java.util.Map;
+
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.annotation.Nullable;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 /**
  * Payload sent over wire as well as it gets persisted, containing all base data for a compensation request

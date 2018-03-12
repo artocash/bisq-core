@@ -19,16 +19,21 @@ package bisq.core.offer;
 
 import bisq.core.trade.Tradable;
 import bisq.core.trade.TradableList;
-import io.bisq.common.Timer;
-import io.bisq.common.UserThread;
-import io.bisq.common.proto.ProtoUtil;
-import io.bisq.common.storage.Storage;
-import io.bisq.generated.protobuffer.PB;
+
+import bisq.common.Timer;
+import bisq.common.UserThread;
+import bisq.common.proto.ProtoUtil;
+import bisq.common.storage.Storage;
+
+import java.util.Date;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Date;
+
+
+import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode
 @Slf4j

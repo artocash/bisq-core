@@ -18,14 +18,19 @@
 package bisq.core.payment;
 
 import bisq.core.proto.CoreProtoResolver;
+
+import bisq.common.proto.persistable.PersistableEnvelope;
+import bisq.common.proto.persistable.PersistableList;
+
 import com.google.protobuf.Message;
-import io.bisq.common.proto.persistable.PersistableEnvelope;
-import io.bisq.common.proto.persistable.PersistableList;
-import io.bisq.generated.protobuffer.PB;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 public class PaymentAccountList extends PersistableList<PaymentAccount> {
 

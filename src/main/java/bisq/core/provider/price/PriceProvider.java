@@ -18,19 +18,24 @@
 package bisq.core.provider.price;
 
 import bisq.core.provider.HttpClientProvider;
+
+import bisq.network.http.HttpClient;
+
+import bisq.common.app.Version;
+import bisq.common.util.MathUtils;
+import bisq.common.util.Tuple2;
+
 import com.google.gson.Gson;
 import com.google.gson.internal.LinkedTreeMap;
-import io.bisq.common.app.Version;
-import io.bisq.common.util.MathUtils;
-import io.bisq.common.util.Tuple2;
-import io.bisq.network.http.HttpClient;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class PriceProvider extends HttpClientProvider {

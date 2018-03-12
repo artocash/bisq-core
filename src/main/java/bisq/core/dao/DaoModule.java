@@ -17,10 +17,23 @@
 
 package bisq.core.dao;
 
-import bisq.core.dao.blockchain.*;
+import bisq.core.dao.blockchain.BsqBlockChain;
+import bisq.core.dao.blockchain.BsqBlockChainChangeDispatcher;
+import bisq.core.dao.blockchain.ReadableBsqBlockChain;
+import bisq.core.dao.blockchain.SnapshotManager;
+import bisq.core.dao.blockchain.WritableBsqBlockChain;
 import bisq.core.dao.blockchain.json.JsonBlockChainExporter;
 import bisq.core.dao.node.BsqNodeProvider;
-import bisq.core.dao.node.consensus.*;
+import bisq.core.dao.node.consensus.BsqTxController;
+import bisq.core.dao.node.consensus.CompensationRequestController;
+import bisq.core.dao.node.consensus.GenesisTxController;
+import bisq.core.dao.node.consensus.IssuanceController;
+import bisq.core.dao.node.consensus.OpReturnController;
+import bisq.core.dao.node.consensus.TxInputController;
+import bisq.core.dao.node.consensus.TxInputsController;
+import bisq.core.dao.node.consensus.TxOutputController;
+import bisq.core.dao.node.consensus.TxOutputsController;
+import bisq.core.dao.node.consensus.VotingController;
 import bisq.core.dao.node.full.FullNode;
 import bisq.core.dao.node.full.FullNodeExecutor;
 import bisq.core.dao.node.full.FullNodeParser;
@@ -33,10 +46,13 @@ import bisq.core.dao.node.lite.network.LiteNodeNetworkManager;
 import bisq.core.dao.proposal.ProposalCollectionsManager;
 import bisq.core.dao.proposal.compensation.CompensationRequestManager;
 import bisq.core.dao.proposal.generic.GenericProposalManager;
+
+import bisq.common.app.AppModule;
+
+import org.springframework.core.env.Environment;
+
 import com.google.inject.Singleton;
 import com.google.inject.name.Names;
-import io.bisq.common.app.AppModule;
-import org.springframework.core.env.Environment;
 
 import static com.google.inject.name.Names.named;
 

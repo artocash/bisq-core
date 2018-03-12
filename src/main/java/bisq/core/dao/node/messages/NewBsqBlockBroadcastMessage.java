@@ -1,12 +1,18 @@
 package bisq.core.dao.node.messages;
 
 import bisq.core.dao.blockchain.vo.BsqBlock;
-import io.bisq.common.app.Version;
-import io.bisq.common.proto.network.NetworkEnvelope;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.storage.messages.BroadcastMessage;
+
+import bisq.network.p2p.storage.messages.BroadcastMessage;
+
+import bisq.common.app.Version;
+import bisq.common.proto.network.NetworkEnvelope;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @Getter

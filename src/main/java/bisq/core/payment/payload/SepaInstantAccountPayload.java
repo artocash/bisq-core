@@ -17,22 +17,35 @@
 
 package bisq.core.payment.payload;
 
+import bisq.common.locale.Country;
+import bisq.common.locale.CountryUtil;
+
 import com.google.protobuf.Message;
-import io.bisq.common.locale.Country;
-import io.bisq.common.locale.CountryUtil;
-import io.bisq.generated.protobuffer.PB;
+
+import org.springframework.util.CollectionUtils;
+
+import org.apache.commons.lang3.ArrayUtils;
+
+import java.nio.charset.Charset;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.ArrayUtils;
-import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Nullable;
-import java.nio.charset.Charset;
-import java.util.*;
-import java.util.stream.Collectors;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @ToString

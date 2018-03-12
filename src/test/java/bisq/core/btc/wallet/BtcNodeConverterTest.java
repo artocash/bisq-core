@@ -2,14 +2,18 @@ package bisq.core.btc.wallet;
 
 import bisq.core.btc.BitcoinNodes.BtcNode;
 import bisq.core.btc.wallet.BtcNodeConverter.Facade;
-import com.runjva.sourceforge.jsocks.protocol.Socks5Proxy;
-import io.bisq.network.DnsLookupException;
+
+import bisq.network.DnsLookupException;
+
 import org.bitcoinj.core.PeerAddress;
-import org.junit.Ignore;
-import org.junit.Test;
+
+import com.runjva.sourceforge.jsocks.protocol.Socks5Proxy;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+
+import org.junit.Ignore;
+import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

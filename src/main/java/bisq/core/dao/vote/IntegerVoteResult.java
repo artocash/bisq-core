@@ -18,8 +18,12 @@
 package bisq.core.dao.vote;
 
 import com.google.protobuf.Message;
-import io.bisq.generated.protobuffer.PB;
+
 import lombok.Getter;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @Getter
 public class IntegerVoteResult extends VoteResult {

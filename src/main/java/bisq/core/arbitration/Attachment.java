@@ -1,9 +1,14 @@
 package bisq.core.arbitration;
 
+import bisq.common.proto.network.NetworkPayload;
+
 import com.google.protobuf.ByteString;
-import io.bisq.common.proto.network.NetworkPayload;
-import io.bisq.generated.protobuffer.PB;
+
 import lombok.Value;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @Value
 public final class Attachment implements NetworkPayload {

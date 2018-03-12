@@ -3,27 +3,39 @@ package bisq.core.trade.statistics;
 import bisq.core.app.AppOptionKeys;
 import bisq.core.provider.price.PriceFeedService;
 import bisq.core.trade.Trade;
+
+import bisq.network.p2p.P2PService;
+import bisq.network.p2p.storage.HashMapChangedListener;
+import bisq.network.p2p.storage.payload.ProtectedStorageEntry;
+import bisq.network.p2p.storage.payload.ProtectedStoragePayload;
+
+import bisq.common.UserThread;
+import bisq.common.locale.CurrencyTuple;
+import bisq.common.locale.CurrencyUtil;
+import bisq.common.locale.Res;
+import bisq.common.storage.JsonFileManager;
+import bisq.common.storage.Storage;
+import bisq.common.util.Utilities;
+
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
-import io.bisq.common.UserThread;
-import io.bisq.common.locale.CurrencyTuple;
-import io.bisq.common.locale.CurrencyUtil;
-import io.bisq.common.locale.Res;
-import io.bisq.common.storage.JsonFileManager;
-import io.bisq.common.storage.Storage;
-import io.bisq.common.util.Utilities;
-import io.bisq.network.p2p.P2PService;
-import io.bisq.network.p2p.storage.HashMapChangedListener;
-import io.bisq.network.p2p.storage.payload.ProtectedStorageEntry;
-import io.bisq.network.p2p.storage.payload.ProtectedStoragePayload;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableSet;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class TradeStatisticsManager {

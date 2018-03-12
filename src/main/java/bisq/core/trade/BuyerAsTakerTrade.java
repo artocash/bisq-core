@@ -22,13 +22,20 @@ import bisq.core.offer.Offer;
 import bisq.core.proto.CoreProtoResolver;
 import bisq.core.trade.protocol.BuyerAsTakerProtocol;
 import bisq.core.trade.protocol.TakerProtocol;
-import io.bisq.common.storage.Storage;
-import io.bisq.generated.protobuffer.PB;
-import io.bisq.network.p2p.NodeAddress;
-import lombok.extern.slf4j.Slf4j;
+
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.storage.Storage;
+
 import org.bitcoinj.core.Coin;
 
+import lombok.extern.slf4j.Slf4j;
+
 import static com.google.common.base.Preconditions.checkArgument;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @Slf4j
 public final class BuyerAsTakerTrade extends BuyerTrade implements TakerTrade {

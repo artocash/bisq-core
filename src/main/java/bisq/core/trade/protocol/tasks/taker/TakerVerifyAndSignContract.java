@@ -25,14 +25,18 @@ import bisq.core.trade.SellerAsTakerTrade;
 import bisq.core.trade.Trade;
 import bisq.core.trade.protocol.TradingPeer;
 import bisq.core.trade.protocol.tasks.TradeTask;
-import io.bisq.common.crypto.Sig;
-import io.bisq.common.taskrunner.TaskRunner;
-import io.bisq.common.util.Utilities;
-import io.bisq.network.p2p.NodeAddress;
-import lombok.extern.slf4j.Slf4j;
+
+import bisq.network.p2p.NodeAddress;
+
+import bisq.common.crypto.Sig;
+import bisq.common.taskrunner.TaskRunner;
+import bisq.common.util.Utilities;
+
 import org.bitcoinj.core.Coin;
 
 import java.util.Arrays;
+
+import lombok.extern.slf4j.Slf4j;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;

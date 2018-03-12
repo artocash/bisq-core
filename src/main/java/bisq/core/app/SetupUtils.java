@@ -18,22 +18,27 @@
 package bisq.core.app;
 
 import bisq.core.btc.BaseCurrencyNetwork;
-import io.bisq.common.UserThread;
-import io.bisq.common.crypto.CryptoException;
-import io.bisq.common.crypto.KeyRing;
-import io.bisq.common.crypto.SealedAndSigned;
-import io.bisq.common.handlers.ResultHandler;
-import io.bisq.network.crypto.DecryptedDataTuple;
-import io.bisq.network.crypto.EncryptionService;
-import io.bisq.network.p2p.peers.keepalive.messages.Ping;
-import io.bisq.network.p2p.storage.P2PDataStorage;
+
+import bisq.network.crypto.DecryptedDataTuple;
+import bisq.network.crypto.EncryptionService;
+import bisq.network.p2p.peers.keepalive.messages.Ping;
+import bisq.network.p2p.storage.P2PDataStorage;
+
+import bisq.common.UserThread;
+import bisq.common.crypto.CryptoException;
+import bisq.common.crypto.KeyRing;
+import bisq.common.crypto.SealedAndSigned;
+import bisq.common.handlers.ResultHandler;
+
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
-import lombok.extern.slf4j.Slf4j;
 
 import java.security.Security;
+
 import java.util.Date;
 import java.util.function.Consumer;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class SetupUtils {

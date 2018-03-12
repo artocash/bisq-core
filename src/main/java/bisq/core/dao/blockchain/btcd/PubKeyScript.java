@@ -17,14 +17,20 @@
 
 package bisq.core.dao.blockchain.btcd;
 
+import bisq.common.proto.persistable.PersistablePayload;
+
 import com.google.common.collect.ImmutableList;
-import io.bisq.common.proto.persistable.PersistablePayload;
-import io.bisq.generated.protobuffer.PB;
+
+import java.util.Optional;
+
 import lombok.AllArgsConstructor;
 import lombok.Value;
 
 import javax.annotation.Nullable;
-import java.util.Optional;
+
+
+
+import bisq.generated.protobuffer.PB;
 
 @Value
 @AllArgsConstructor
