@@ -48,13 +48,11 @@ import bisq.common.proto.network.NetworkEnvelope;
 import bisq.common.proto.network.NetworkPayload;
 import bisq.common.proto.network.NetworkProtoResolver;
 
+import io.bisq.generated.protobuffer.PB;
+
 import javax.inject.Inject;
 
 import lombok.extern.slf4j.Slf4j;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 public class CoreNetworkProtoResolver extends CoreProtoResolver implements NetworkProtoResolver {

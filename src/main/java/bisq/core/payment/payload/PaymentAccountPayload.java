@@ -23,6 +23,8 @@ import bisq.common.proto.network.NetworkPayload;
 import bisq.common.util.JsonExclude;
 import bisq.common.util.Utilities;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.nio.charset.Charset;
@@ -40,10 +42,6 @@ import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 // That class is used in the contract for creating the contract json. Any change will break the contract.
 // If a field gets added it need to be be annotated with @JsonExclude (excluded from contract).

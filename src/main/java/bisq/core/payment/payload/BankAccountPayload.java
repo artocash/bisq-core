@@ -20,6 +20,8 @@ package bisq.core.payment.payload;
 import bisq.common.locale.BankUtil;
 import bisq.common.locale.CountryUtil;
 
+import io.bisq.generated.protobuffer.PB;
+
 import java.nio.charset.Charset;
 
 import java.util.Map;
@@ -32,10 +34,6 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @Setter

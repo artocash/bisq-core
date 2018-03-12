@@ -19,11 +19,9 @@ package bisq.core.dao.blockchain.vo;
 
 import bisq.common.proto.persistable.PersistablePayload;
 
+import io.bisq.generated.protobuffer.PB;
+
 import lombok.Value;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Value
 public class SpentInfo implements PersistablePayload {

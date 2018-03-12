@@ -31,11 +31,9 @@ import bisq.common.proto.ProtoResolver;
 import bisq.common.proto.ProtobufferException;
 import bisq.common.proto.persistable.PersistableEnvelope;
 
+import io.bisq.generated.protobuffer.PB;
+
 import lombok.extern.slf4j.Slf4j;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 public class CoreProtoResolver implements ProtoResolver {

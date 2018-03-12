@@ -24,6 +24,8 @@ import bisq.common.proto.persistable.PersistableEnvelope;
 import bisq.common.proto.persistable.PersistedDataHost;
 import bisq.common.storage.Storage;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.Message;
 
 import javafx.collections.FXCollections;
@@ -38,10 +40,6 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 @ToString

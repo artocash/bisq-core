@@ -22,6 +22,8 @@ import bisq.core.app.BisqEnvironment;
 import bisq.common.locale.Res;
 import bisq.common.proto.persistable.PersistablePayload;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.bitcoinj.core.Coin;
 
 import java.util.ArrayList;
@@ -36,10 +38,6 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import org.jetbrains.annotations.NotNull;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(exclude = {"maxTradePeriod", "maxTradeLimit"})
 @ToString

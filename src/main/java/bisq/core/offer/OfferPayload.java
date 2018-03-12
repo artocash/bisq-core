@@ -26,6 +26,8 @@ import bisq.common.locale.CurrencyUtil;
 import bisq.common.proto.ProtoUtil;
 import bisq.common.util.JsonExclude;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.springframework.util.CollectionUtils;
 
 import java.security.PublicKey;
@@ -46,10 +48,6 @@ import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @ToString
 @EqualsAndHashCode

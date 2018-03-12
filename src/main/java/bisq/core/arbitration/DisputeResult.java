@@ -22,6 +22,8 @@ import bisq.core.arbitration.messages.DisputeCommunicationMessage;
 import bisq.common.proto.ProtoUtil;
 import bisq.common.proto.network.NetworkPayload;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import org.bitcoinj.core.Coin;
@@ -41,10 +43,6 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode
 @Getter

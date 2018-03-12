@@ -21,9 +21,7 @@ import bisq.common.proto.ProtobufferException;
 import bisq.common.proto.network.NetworkPayload;
 import bisq.common.proto.persistable.PersistablePayload;
 
-
-
-import bisq.generated.protobuffer.PB;
+import io.bisq.generated.protobuffer.PB;
 
 public abstract class VoteResult implements PersistablePayload, NetworkPayload {
 

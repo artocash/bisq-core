@@ -26,6 +26,8 @@ import bisq.common.proto.ProtobufferException;
 import bisq.common.proto.persistable.PersistableEnvelope;
 import bisq.common.storage.Storage;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.Message;
 
 import javafx.collections.FXCollections;
@@ -41,10 +43,6 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 public final class TradableList<T extends Tradable> implements PersistableEnvelope {

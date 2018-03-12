@@ -23,6 +23,8 @@ import bisq.common.util.JsonExclude;
 import bisq.common.util.MathUtils;
 import bisq.common.util.Utilities;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.bitcoinj.core.Coin;
 import org.bitcoinj.utils.Fiat;
 
@@ -47,10 +49,6 @@ import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 public class Offer implements NetworkPayload, PersistablePayload {

@@ -23,6 +23,8 @@ import bisq.common.app.Capabilities;
 import bisq.common.app.Version;
 import bisq.common.crypto.PubKeyRing;
 
+import io.bisq.generated.protobuffer.PB;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -30,10 +32,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Value;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 // We add here the SupportedCapabilitiesMessage interface as that message always predates a direct connection
 // to the trading peer

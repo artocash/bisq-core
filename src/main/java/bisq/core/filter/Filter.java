@@ -21,6 +21,8 @@ import bisq.network.p2p.storage.payload.ProtectedStoragePayload;
 
 import bisq.common.crypto.Sig;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import org.springframework.util.CollectionUtils;
@@ -43,10 +45,6 @@ import lombok.extern.slf4j.Slf4j;
 import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 @Getter

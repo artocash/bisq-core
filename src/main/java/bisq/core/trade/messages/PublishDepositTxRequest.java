@@ -28,6 +28,8 @@ import bisq.common.app.Version;
 import bisq.common.proto.ProtoUtil;
 import bisq.common.util.Utilities;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import java.util.Date;
@@ -39,10 +41,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Value;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 // We use a MailboxMessage here because the taker has paid already the trade fee and it could be that
 // we lost connection to him but we are complete on our side. So even if the peer is offline he can

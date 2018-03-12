@@ -24,6 +24,8 @@ import bisq.core.dao.vote.VoteResult;
 import bisq.common.proto.ProtobufferException;
 import bisq.common.proto.persistable.PersistablePayload;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.bitcoinj.core.Coin;
 import org.bitcoinj.core.Transaction;
 
@@ -36,10 +38,6 @@ import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 /**
  * Base class for all proposals like compensation request, general purpose request, remove altcoin request, change fee request, etc.

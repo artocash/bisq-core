@@ -1,6 +1,7 @@
 package bisq.core.payment;
 
 import bisq.core.offer.Offer;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j

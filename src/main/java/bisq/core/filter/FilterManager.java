@@ -37,6 +37,8 @@ import bisq.common.UserThread;
 import bisq.common.app.DevEnv;
 import bisq.common.crypto.KeyRing;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.bitcoinj.core.ECKey;
 import org.bitcoinj.core.Utils;
 
@@ -63,10 +65,6 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.Nullable;
 
 import static org.bitcoinj.core.Utils.HEX;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 public class FilterManager {
     private static final Logger log = LoggerFactory.getLogger(FilterManager.class);

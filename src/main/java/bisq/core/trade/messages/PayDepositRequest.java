@@ -27,6 +27,8 @@ import bisq.common.crypto.PubKeyRing;
 import bisq.common.proto.ProtoUtil;
 import bisq.common.util.Utilities;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import java.util.Date;
@@ -38,10 +40,6 @@ import lombok.EqualsAndHashCode;
 import lombok.Value;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 
 @EqualsAndHashCode(callSuper = true)

@@ -19,9 +19,7 @@ package bisq.core.dao.blockchain.vo;
 
 import bisq.common.proto.ProtoUtil;
 
-
-
-import bisq.generated.protobuffer.PB;
+import io.bisq.generated.protobuffer.PB;
 
 public enum TxOutputType {
     UNDEFINED,

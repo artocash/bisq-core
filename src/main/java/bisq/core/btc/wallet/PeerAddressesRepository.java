@@ -18,15 +18,18 @@
 package bisq.core.btc.wallet;
 
 import bisq.core.btc.BitcoinNodes.BtcNode;
-import com.runjva.sourceforge.jsocks.protocol.Socks5Proxy;
+
 import org.bitcoinj.core.PeerAddress;
 
-import javax.annotation.Nullable;
+import com.runjva.sourceforge.jsocks.protocol.Socks5Proxy;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import javax.annotation.Nullable;
 
 class PeerAddressesRepository {
     private final BtcNodeConverter converter;

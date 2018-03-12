@@ -17,6 +17,8 @@
 
 package bisq.core.payment.payload;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.Message;
 
 import org.springframework.util.CollectionUtils;
@@ -35,10 +37,6 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @ToString

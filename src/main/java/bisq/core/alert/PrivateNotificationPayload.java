@@ -21,6 +21,8 @@ import bisq.common.crypto.Sig;
 import bisq.common.proto.network.NetworkPayload;
 import bisq.common.util.Utilities;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import java.security.PublicKey;
@@ -31,10 +33,6 @@ import lombok.Getter;
 import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 
 @EqualsAndHashCode

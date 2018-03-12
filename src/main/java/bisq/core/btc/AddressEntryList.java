@@ -21,6 +21,8 @@ import bisq.common.proto.persistable.PersistableEnvelope;
 import bisq.common.proto.persistable.PersistedDataHost;
 import bisq.common.storage.Storage;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.Message;
 
 import org.bitcoinj.crypto.DeterministicKey;
@@ -36,10 +38,6 @@ import java.util.stream.Stream;
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 /**
  * The List supporting our persistence solution.

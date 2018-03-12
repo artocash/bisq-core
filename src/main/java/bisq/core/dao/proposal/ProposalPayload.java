@@ -31,6 +31,8 @@ import bisq.common.crypto.Sig;
 import bisq.common.proto.ProtobufferException;
 import bisq.common.util.JsonExclude;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.bitcoinj.core.Utils;
 
 import java.security.PublicKey;
@@ -47,10 +49,6 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 /**
  * Payload sent over wire as well as it gets persisted, containing all base data for a compensation request

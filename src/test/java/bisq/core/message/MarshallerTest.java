@@ -1,5 +1,7 @@
 package bisq.core.message;
 
+import io.bisq.generated.protobuffer.PB;
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -9,10 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 public class MarshallerTest {

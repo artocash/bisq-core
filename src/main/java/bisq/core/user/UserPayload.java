@@ -27,6 +27,8 @@ import bisq.core.proto.CoreProtoResolver;
 import bisq.common.proto.ProtoUtil;
 import bisq.common.proto.persistable.PersistableEnvelope;
 
+import io.bisq.generated.protobuffer.PB;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -39,10 +41,6 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 @Data

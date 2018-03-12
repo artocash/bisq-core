@@ -23,6 +23,8 @@ import bisq.common.proto.persistable.PersistableEnvelope;
 import bisq.common.proto.persistable.PersistenceProtoResolver;
 import bisq.common.storage.Storage;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.inject.Provider;
 
 import javax.inject.Inject;
@@ -31,10 +33,6 @@ import javax.inject.Named;
 import java.io.File;
 
 import lombok.extern.slf4j.Slf4j;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 public class CorePersistenceProtoResolver extends CoreProtoResolver implements PersistenceProtoResolver {

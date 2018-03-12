@@ -29,6 +29,8 @@ import bisq.common.proto.network.NetworkPayload;
 import bisq.common.util.JsonExclude;
 import bisq.common.util.Utilities;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import org.bitcoinj.core.Coin;
@@ -41,10 +43,6 @@ import lombok.extern.slf4j.Slf4j;
 import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkArgument;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 @Value

@@ -24,6 +24,8 @@ import bisq.network.p2p.NodeAddress;
 
 import bisq.common.app.Version;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.springframework.util.CollectionUtils;
 
 import org.bitcoinj.core.Coin;
@@ -38,10 +40,6 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 /**
  * Payload sent over wire as well as it gets persisted, containing all base data for a compensation request

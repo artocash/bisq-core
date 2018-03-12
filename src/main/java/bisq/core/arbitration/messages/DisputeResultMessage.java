@@ -23,12 +23,12 @@ import bisq.network.p2p.NodeAddress;
 
 import bisq.common.app.Version;
 
+import io.bisq.generated.protobuffer.PB;
+
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 
-
-
-import bisq.generated.protobuffer.PB;
+import static com.google.common.base.Preconditions.checkArgument;
 
 @Value
 @EqualsAndHashCode(callSuper = true)

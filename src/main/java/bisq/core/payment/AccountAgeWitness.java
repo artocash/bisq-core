@@ -27,6 +27,8 @@ import bisq.common.app.Capabilities;
 import bisq.common.proto.persistable.PersistableEnvelope;
 import bisq.common.util.Utilities;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import java.util.ArrayList;
@@ -37,10 +39,6 @@ import java.util.concurrent.TimeUnit;
 
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 // Object has 28 raw bytes (33 bytes is size of ProtoBuffer object in storage list, 5 byte extra for list -> totalBytes = 5 + n*33)
 // With 1 000 000 entries we get about 33 MB of data. Old entries will be shipped with the resource file,

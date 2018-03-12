@@ -14,6 +14,8 @@ import bisq.common.monetary.Volume;
 import bisq.common.proto.persistable.PersistablePayload;
 import bisq.common.util.JsonExclude;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import org.springframework.util.CollectionUtils;
@@ -34,10 +36,6 @@ import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 /**
  * @deprecated Was used in pre v0.6.0 version

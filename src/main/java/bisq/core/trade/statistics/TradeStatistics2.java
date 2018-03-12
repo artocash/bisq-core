@@ -17,6 +17,8 @@ import bisq.common.proto.persistable.PersistableEnvelope;
 import bisq.common.util.JsonExclude;
 import bisq.common.util.Utilities;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import org.springframework.util.CollectionUtils;
@@ -38,10 +40,6 @@ import lombok.extern.slf4j.Slf4j;
 import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 /**
  * Serialized size is about 180-210 byte. Nov 2017 we have 5500 objects

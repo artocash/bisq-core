@@ -23,6 +23,8 @@ import bisq.core.dao.proposal.ProposalPayload;
 import bisq.core.dao.proposal.ProposalType;
 import bisq.core.dao.vote.VoteResult;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.springframework.util.CollectionUtils;
 
 import org.bitcoinj.core.Address;
@@ -35,10 +37,6 @@ import lombok.Getter;
 import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 /**
  * Locally persisted CompensationRequest data.

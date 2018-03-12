@@ -27,15 +27,13 @@ import bisq.network.p2p.NodeAddress;
 
 import bisq.common.storage.Storage;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.bitcoinj.core.Coin;
 
 import lombok.extern.slf4j.Slf4j;
 
 import static com.google.common.base.Preconditions.checkArgument;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 public final class BuyerAsTakerTrade extends BuyerTrade implements TakerTrade {

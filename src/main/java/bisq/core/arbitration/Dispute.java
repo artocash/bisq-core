@@ -27,6 +27,8 @@ import bisq.common.proto.network.NetworkPayload;
 import bisq.common.storage.Storage;
 import bisq.common.util.Utilities;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import javafx.beans.property.BooleanProperty;
@@ -48,10 +50,6 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Slf4j
 @EqualsAndHashCode

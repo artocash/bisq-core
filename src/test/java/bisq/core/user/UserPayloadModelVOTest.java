@@ -5,7 +5,9 @@ import bisq.core.arbitration.ArbitratorTest;
 import bisq.core.arbitration.MediatorTest;
 import bisq.core.filter.Filter;
 import bisq.core.proto.CoreProtoResolver;
+
 import com.google.common.collect.Lists;
+
 import org.junit.Ignore;
 
 /*

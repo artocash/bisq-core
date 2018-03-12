@@ -23,6 +23,8 @@ import bisq.core.dao.blockchain.vo.util.TxIdIndexTuple;
 import bisq.common.proto.persistable.PersistablePayload;
 import bisq.common.util.JsonExclude;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import org.bitcoinj.core.Utils;
@@ -33,10 +35,6 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Data
 @Slf4j

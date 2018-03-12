@@ -7,6 +7,8 @@ import bisq.common.app.Capabilities;
 import bisq.common.app.Version;
 import bisq.common.proto.network.NetworkEnvelope;
 
+import io.bisq.generated.protobuffer.PB;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,10 +16,6 @@ import java.util.List;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @Getter

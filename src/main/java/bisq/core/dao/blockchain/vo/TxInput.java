@@ -21,15 +21,13 @@ import bisq.core.dao.blockchain.vo.util.TxIdIndexTuple;
 
 import bisq.common.proto.persistable.PersistablePayload;
 
+import io.bisq.generated.protobuffer.PB;
+
 import java.util.Optional;
 
 import lombok.Data;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @Data
 public class TxInput implements PersistablePayload {

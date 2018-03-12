@@ -28,6 +28,8 @@ import bisq.common.proto.persistable.PersistableEnvelope;
 import bisq.common.util.FunctionalReadWriteLock;
 import bisq.common.util.Tuple2;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.Message;
 
 import org.bitcoinj.core.Coin;
@@ -51,10 +53,6 @@ import lombok.extern.slf4j.Slf4j;
 import javax.annotation.Nullable;
 
 import static com.google.common.base.Preconditions.checkArgument;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 
 /**

@@ -24,14 +24,12 @@ import bisq.common.app.Version;
 import bisq.common.proto.network.NetworkEnvelope;
 import bisq.common.util.Utilities;
 
+import io.bisq.generated.protobuffer.PB;
+
 import com.google.protobuf.ByteString;
 
 import lombok.EqualsAndHashCode;
 import lombok.Value;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @Value

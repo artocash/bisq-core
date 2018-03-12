@@ -17,6 +17,8 @@
 
 package bisq.core.payment.payload;
 
+import io.bisq.generated.protobuffer.PB;
+
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.nio.charset.Charset;
@@ -30,10 +32,6 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import bisq.generated.protobuffer.PB;
 
 @EqualsAndHashCode(callSuper = true)
 @ToString

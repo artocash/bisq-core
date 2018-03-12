@@ -1,6 +1,7 @@
 package bisq.core.payment;
 
 import bisq.core.proto.CoreProtoResolver;
+
 import org.junit.Ignore;
 
 import static org.junit.Assert.assertEquals;

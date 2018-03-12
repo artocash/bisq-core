@@ -17,10 +17,10 @@
 
 package bisq.core.provider.price;
 
+import java.time.Instant;
+
 import lombok.Getter;
 import lombok.Value;
-
-import java.time.Instant;
 
 @Value
 public class MarketPrice {
