@@ -1,0 +1,81 @@
+package bisq.core.crypto;
+
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.Security;
+import java.security.cert.CertificateException;
+
+import java.io.File;
+import java.io.IOException;
+
+import java.util.Random;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertTrue;
+
+
+
+import io.bisq.common.crypto.CryptoException;
+import io.bisq.common.crypto.KeyRing;
+import io.bisq.common.crypto.KeyStorage;
+import io.bisq.common.crypto.Sig;
+import io.bisq.common.storage.FileUtil;
+
+public class SigTest {
+    private static final Logger log = LoggerFactory.getLogger(SigTest.class);
+    private KeyRing keyRing;
+    private File dir;
+
+    @Before
+    public void setup() throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, CryptoException {
+        Security.addProvider(new BouncyCastleProvider());
+        dir = File.createTempFile("temp_tests", "");
+        //noinspection ResultOfMethodCallIgnored
+        dir.delete();
+        //noinspection ResultOfMethodCallIgnored
+        dir.mkdir();
+        KeyStorage keyStorage = new KeyStorage(dir);
+        keyRing = new KeyRing(keyStorage);
+    }
+
+    @After
+    public void tearDown() throws IOException {
+        FileUtil.deleteDirectory(dir);
+    }
+
+
+    @Test
+    public void testSignature() {
+        long ts = System.currentTimeMillis();
+        log.trace("start ");
+        for (int i = 0; i < 100; i++) {
+            String msg = String.valueOf(new Random().nextInt());
+            String sig = null;
+            try {
+                sig = Sig.sign(keyRing.getSignatureKeyPair().getPrivate(), msg);
+            } catch (CryptoException e) {
+                log.error("sign failed");
+                e.printStackTrace();
+                assertTrue(false);
+            }
+            try {
+                assertTrue(Sig.verify(keyRing.getSignatureKeyPair().getPublic(), msg, sig));
+            } catch (CryptoException e) {
+                log.error("verify failed");
+                e.printStackTrace();
+                assertTrue(false);
+            }
+        }
+        log.trace("took " + (System.currentTimeMillis() - ts) + " ms.");
+    }
+}
+
+
