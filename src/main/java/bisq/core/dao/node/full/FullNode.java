@@ -33,7 +33,7 @@ import bisq.network.p2p.P2PService;
 import bisq.common.UserThread;
 import bisq.common.handlers.ErrorMessageHandler;
 
-import com.google.inject.Inject;
+import javax.inject.Inject;
 
 import lombok.extern.slf4j.Slf4j;
 

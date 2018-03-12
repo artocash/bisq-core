@@ -41,7 +41,6 @@ import lombok.Value;
 
 import javax.annotation.Nullable;
 
-
 @EqualsAndHashCode(callSuper = true)
 @Value
 public final class PayDepositRequest extends TradeMessage {

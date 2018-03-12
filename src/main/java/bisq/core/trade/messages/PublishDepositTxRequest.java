@@ -45,7 +45,6 @@ import javax.annotation.Nullable;
 // We use a MailboxMessage here because the taker has paid already the trade fee and it could be that
 // we lost connection to him but we are complete on our side. So even if the peer is offline he can
 // continue later to complete the deposit tx.
-
 @EqualsAndHashCode(callSuper = true)
 @Value
 public final class PublishDepositTxRequest extends TradeMessage implements MailboxMessage {

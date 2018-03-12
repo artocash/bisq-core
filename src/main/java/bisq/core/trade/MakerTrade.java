@@ -17,7 +17,6 @@
 
 package bisq.core.trade;
 
-
 import bisq.core.trade.messages.TradeMessage;
 
 import bisq.network.p2p.NodeAddress;

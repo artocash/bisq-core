@@ -51,8 +51,7 @@ import org.bitcoinj.wallet.Wallet;
 
 import com.runjva.sourceforge.jsocks.protocol.Socks5Proxy;
 
-import com.google.inject.Inject;
-
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.google.common.annotations.VisibleForTesting;

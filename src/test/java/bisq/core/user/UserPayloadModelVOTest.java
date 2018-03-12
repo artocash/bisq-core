@@ -1,15 +1,3 @@
-package bisq.core.user;
-
-import bisq.core.alert.Alert;
-import bisq.core.arbitration.ArbitratorTest;
-import bisq.core.arbitration.MediatorTest;
-import bisq.core.filter.Filter;
-import bisq.core.proto.CoreProtoResolver;
-
-import com.google.common.collect.Lists;
-
-import org.junit.Ignore;
-
 /*
  * This file is part of Bisq.
  *
@@ -26,6 +14,19 @@ import org.junit.Ignore;
  * You should have received a copy of the GNU Affero General Public License
  * along with Bisq. If not, see <http://www.gnu.org/licenses/>.
  */
+
+package bisq.core.user;
+
+import bisq.core.alert.Alert;
+import bisq.core.arbitration.ArbitratorTest;
+import bisq.core.arbitration.MediatorTest;
+import bisq.core.filter.Filter;
+import bisq.core.proto.CoreProtoResolver;
+
+import com.google.common.collect.Lists;
+
+import org.junit.Ignore;
+
 @SuppressWarnings("UnusedAssignment")
 public class UserPayloadModelVOTest {
     @Ignore("TODO InvalidKeySpecException at io.bisq.common.crypto.Sig.getPublicKeyFromBytes(Sig.java:135)")

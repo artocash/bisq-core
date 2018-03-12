@@ -54,8 +54,7 @@ import bisq.common.storage.Storage;
 
 import org.bitcoinj.core.Coin;
 
-import com.google.inject.Inject;
-
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import javafx.collections.ObservableList;

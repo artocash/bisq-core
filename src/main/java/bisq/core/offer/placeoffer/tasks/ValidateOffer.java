@@ -32,7 +32,6 @@ import org.slf4j.LoggerFactory;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-
 public class ValidateOffer extends Task<PlaceOfferModel> {
     @SuppressWarnings("unused")
     private static final Logger log = LoggerFactory.getLogger(ValidateOffer.class);
