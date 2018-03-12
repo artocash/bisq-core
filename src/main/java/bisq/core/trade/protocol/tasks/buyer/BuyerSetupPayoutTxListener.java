@@ -22,20 +22,14 @@ import bisq.core.btc.listeners.AddressConfidenceListener;
 import bisq.core.btc.wallet.BtcWalletService;
 import bisq.core.trade.Trade;
 import bisq.core.trade.protocol.tasks.TradeTask;
-
+import io.bisq.common.UserThread;
+import io.bisq.common.taskrunner.TaskRunner;
+import lombok.extern.slf4j.Slf4j;
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.TransactionConfidence;
-
 import org.fxmisc.easybind.EasyBind;
 import org.fxmisc.easybind.Subscription;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
-import io.bisq.common.UserThread;
-import io.bisq.common.taskrunner.TaskRunner;
 
 @Slf4j
 public class BuyerSetupPayoutTxListener extends TradeTask {

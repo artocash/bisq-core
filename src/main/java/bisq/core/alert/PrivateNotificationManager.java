@@ -18,30 +18,8 @@
 package bisq.core.alert;
 
 import bisq.core.app.AppOptionKeys;
-
-import org.bitcoinj.core.ECKey;
-import org.bitcoinj.core.Utils;
-
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
-
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.ReadOnlyObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-
-import java.security.SignatureException;
-
-import java.util.UUID;
-
-import java.math.BigInteger;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import static org.bitcoinj.core.Utils.HEX;
-
-
-
 import io.bisq.common.app.DevEnv;
 import io.bisq.common.crypto.KeyRing;
 import io.bisq.common.crypto.PubKeyRing;
@@ -50,6 +28,19 @@ import io.bisq.network.p2p.DecryptedMessageWithPubKey;
 import io.bisq.network.p2p.NodeAddress;
 import io.bisq.network.p2p.P2PService;
 import io.bisq.network.p2p.SendMailboxMessageListener;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.ReadOnlyObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import org.bitcoinj.core.ECKey;
+import org.bitcoinj.core.Utils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.math.BigInteger;
+import java.security.SignatureException;
+import java.util.UUID;
+
+import static org.bitcoinj.core.Utils.HEX;
 
 public class PrivateNotificationManager {
     private static final Logger log = LoggerFactory.getLogger(PrivateNotificationManager.class);

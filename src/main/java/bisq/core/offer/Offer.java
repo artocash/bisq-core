@@ -6,36 +6,6 @@ import bisq.core.offer.availability.OfferAvailabilityProtocol;
 import bisq.core.payment.payload.PaymentMethod;
 import bisq.core.provider.price.MarketPrice;
 import bisq.core.provider.price.PriceFeedService;
-
-import io.bisq.generated.protobuffer.PB;
-
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.utils.Fiat;
-
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.ReadOnlyStringProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
-import java.security.PublicKey;
-
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
 import io.bisq.common.crypto.KeyRing;
 import io.bisq.common.crypto.PubKeyRing;
 import io.bisq.common.handlers.ErrorMessageHandler;
@@ -49,7 +19,24 @@ import io.bisq.common.proto.persistable.PersistablePayload;
 import io.bisq.common.util.JsonExclude;
 import io.bisq.common.util.MathUtils;
 import io.bisq.common.util.Utilities;
+import io.bisq.generated.protobuffer.PB;
 import io.bisq.network.p2p.NodeAddress;
+import javafx.beans.property.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.utils.Fiat;
+
+import javax.annotation.Nullable;
+import java.security.PublicKey;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 @Slf4j
 public class Offer implements NetworkPayload, PersistablePayload {

@@ -1,22 +1,17 @@
 package bisq.core.trade.statistics;
 
 import bisq.core.offer.OfferPayload;
-
-import org.bitcoinj.core.Coin;
-
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.concurrent.Immutable;
-
-
-
 import io.bisq.common.locale.CurrencyUtil;
 import io.bisq.common.locale.Res;
 import io.bisq.common.monetary.Price;
 import io.bisq.common.monetary.Volume;
 import io.bisq.common.util.MathUtils;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Coin;
+
+import javax.annotation.concurrent.Immutable;
 
 @Immutable
 @EqualsAndHashCode

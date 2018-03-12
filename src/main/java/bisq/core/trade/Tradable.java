@@ -18,12 +18,9 @@
 package bisq.core.trade;
 
 import bisq.core.offer.Offer;
+import io.bisq.common.proto.persistable.PersistablePayload;
 
 import java.util.Date;
-
-
-
-import io.bisq.common.proto.persistable.PersistablePayload;
 
 public interface Tradable extends PersistablePayload {
     Offer getOffer();

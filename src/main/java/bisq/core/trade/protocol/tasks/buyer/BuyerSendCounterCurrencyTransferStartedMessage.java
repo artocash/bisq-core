@@ -22,15 +22,11 @@ import bisq.core.btc.wallet.BtcWalletService;
 import bisq.core.trade.Trade;
 import bisq.core.trade.messages.CounterCurrencyTransferStartedMessage;
 import bisq.core.trade.protocol.tasks.TradeTask;
-
-import java.util.UUID;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.common.taskrunner.TaskRunner;
 import io.bisq.network.p2p.SendMailboxMessageListener;
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.UUID;
 
 @Slf4j
 public class BuyerSendCounterCurrencyTransferStartedMessage extends TradeTask {

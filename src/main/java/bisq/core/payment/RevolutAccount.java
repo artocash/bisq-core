@@ -20,12 +20,8 @@ package bisq.core.payment;
 import bisq.core.payment.payload.PaymentAccountPayload;
 import bisq.core.payment.payload.PaymentMethod;
 import bisq.core.payment.payload.RevolutAccountPayload;
-
-import lombok.EqualsAndHashCode;
-
-
-
 import io.bisq.common.locale.CurrencyUtil;
+import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 public final class RevolutAccount extends PaymentAccount {

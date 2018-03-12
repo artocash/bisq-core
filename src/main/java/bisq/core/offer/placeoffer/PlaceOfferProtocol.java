@@ -21,14 +21,10 @@ import bisq.core.offer.placeoffer.tasks.AddToOfferBook;
 import bisq.core.offer.placeoffer.tasks.CreateMakerFeeTx;
 import bisq.core.offer.placeoffer.tasks.ValidateOffer;
 import bisq.core.trade.handlers.TransactionResultHandler;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
-
 import io.bisq.common.handlers.ErrorMessageHandler;
 import io.bisq.common.taskrunner.TaskRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class PlaceOfferProtocol {
     private static final Logger log = LoggerFactory.getLogger(PlaceOfferProtocol.class);

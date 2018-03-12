@@ -17,13 +17,10 @@
 
 package bisq.core.dao.vote;
 
-import io.bisq.generated.protobuffer.PB;
-
-
-
 import io.bisq.common.proto.ProtobufferException;
 import io.bisq.common.proto.network.NetworkPayload;
 import io.bisq.common.proto.persistable.PersistablePayload;
+import io.bisq.generated.protobuffer.PB;
 
 public abstract class VoteResult implements PersistablePayload, NetworkPayload {
 

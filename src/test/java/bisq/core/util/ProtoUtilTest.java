@@ -18,18 +18,13 @@
 package bisq.core.util;
 
 import bisq.core.offer.OpenOffer;
-
+import io.bisq.common.proto.ProtoUtil;
 import io.bisq.generated.protobuffer.PB;
 import io.bisq.generated.protobuffer.PB.OfferPayload;
-
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
-
-
-
-import io.bisq.common.proto.ProtoUtil;
 
 @SuppressWarnings("UnusedAssignment")
 public class ProtoUtilTest {

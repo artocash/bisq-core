@@ -18,12 +18,9 @@
 package bisq.core.network.p2p.seed;
 
 import com.google.common.collect.ImmutableSet;
+import io.bisq.network.p2p.NodeAddress;
 
 import java.util.Set;
-
-
-
-import io.bisq.network.p2p.NodeAddress;
 
 class DefaultSeedNodeAddresses {
     // Addresses are used if the last digit of their port match the network id:

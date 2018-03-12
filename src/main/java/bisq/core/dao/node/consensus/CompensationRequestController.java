@@ -22,14 +22,11 @@ import bisq.core.dao.blockchain.vo.Tx;
 import bisq.core.dao.blockchain.vo.TxOutput;
 import bisq.core.dao.blockchain.vo.TxOutputType;
 import bisq.core.dao.blockchain.vo.TxType;
+import io.bisq.common.app.Version;
 
 import javax.inject.Inject;
 
 import static com.google.common.base.Preconditions.checkArgument;
-
-
-
-import io.bisq.common.app.Version;
 
 /**
  * Verifies if OP_RETURN data matches rules for a compensation request tx and applies state change.

@@ -17,13 +17,9 @@
 
 package bisq.core.dao.blockchain.vo.util;
 
-import io.bisq.generated.protobuffer.PB;
-
-import lombok.Value;
-
-
-
 import io.bisq.common.proto.persistable.PersistablePayload;
+import io.bisq.generated.protobuffer.PB;
+import lombok.Value;
 
 @Value
 public class TxIdIndexTuple implements PersistablePayload {

@@ -22,19 +22,14 @@ import bisq.core.dao.proposal.Proposal;
 import bisq.core.dao.proposal.ProposalPayload;
 import bisq.core.dao.proposal.ProposalType;
 import bisq.core.dao.vote.VoteResult;
-
 import io.bisq.generated.protobuffer.PB;
-
-import org.springframework.util.CollectionUtils;
-
+import lombok.Getter;
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.Coin;
-
-import java.util.Map;
-
-import lombok.Getter;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Nullable;
+import java.util.Map;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

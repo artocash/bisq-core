@@ -25,47 +25,35 @@ import bisq.core.payment.payload.PaymentMethod;
 import bisq.core.provider.ProvidersRepository;
 import bisq.core.user.Preferences;
 import bisq.core.user.User;
-
-import io.bisq.generated.protobuffer.PB;
-
-import org.bitcoinj.core.ECKey;
-import org.bitcoinj.core.Utils;
-
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
-
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-
-import java.security.SignatureException;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import java.math.BigInteger;
-
-import java.lang.reflect.Method;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.annotation.Nullable;
-
-import static org.bitcoinj.core.Utils.HEX;
-
-
-
 import io.bisq.common.UserThread;
 import io.bisq.common.app.DevEnv;
 import io.bisq.common.crypto.KeyRing;
+import io.bisq.generated.protobuffer.PB;
 import io.bisq.network.p2p.NodeAddress;
 import io.bisq.network.p2p.P2PService;
 import io.bisq.network.p2p.P2PServiceListener;
 import io.bisq.network.p2p.storage.HashMapChangedListener;
 import io.bisq.network.p2p.storage.payload.ProtectedStorageEntry;
 import io.bisq.network.p2p.storage.payload.ProtectedStoragePayload;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import org.bitcoinj.core.ECKey;
+import org.bitcoinj.core.Utils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.annotation.Nullable;
+import java.lang.reflect.Method;
+import java.math.BigInteger;
+import java.security.SignatureException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import static org.bitcoinj.core.Utils.HEX;
 
 public class FilterManager {
     private static final Logger log = LoggerFactory.getLogger(FilterManager.class);

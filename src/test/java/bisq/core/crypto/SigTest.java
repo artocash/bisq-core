@@ -1,33 +1,26 @@
 package bisq.core.crypto;
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
-
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.Security;
-import java.security.cert.CertificateException;
-
-import java.io.File;
-import java.io.IOException;
-
-import java.util.Random;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.Assert.assertTrue;
-
-
-
 import io.bisq.common.crypto.CryptoException;
 import io.bisq.common.crypto.KeyRing;
 import io.bisq.common.crypto.KeyStorage;
 import io.bisq.common.crypto.Sig;
 import io.bisq.common.storage.FileUtil;
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.File;
+import java.io.IOException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.Security;
+import java.security.cert.CertificateException;
+import java.util.Random;
+
+import static org.junit.Assert.assertTrue;
 
 public class SigTest {
     private static final Logger log = LoggerFactory.getLogger(SigTest.class);

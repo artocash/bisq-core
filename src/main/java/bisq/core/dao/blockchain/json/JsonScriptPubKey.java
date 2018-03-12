@@ -18,11 +18,10 @@
 package bisq.core.dao.blockchain.json;
 
 import bisq.core.dao.blockchain.btcd.PubKeyScript;
-
-import java.util.List;
-
 import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.List;
 
 @Slf4j
 @Value

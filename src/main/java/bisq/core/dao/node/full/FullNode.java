@@ -27,16 +27,11 @@ import bisq.core.dao.blockchain.vo.BsqBlock;
 import bisq.core.dao.node.BsqNode;
 import bisq.core.dao.node.full.network.FullNodeNetworkManager;
 import bisq.core.provider.fee.FeeService;
-
 import com.google.inject.Inject;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.common.UserThread;
 import io.bisq.common.handlers.ErrorMessageHandler;
 import io.bisq.network.p2p.P2PService;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Main class for a full node which have Bitcoin Core with rpc running and does the blockchain lookup itself.

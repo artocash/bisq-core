@@ -22,34 +22,8 @@ import bisq.core.payment.payload.PaymentAccountPayload;
 import bisq.core.payment.payload.PaymentMethod;
 import bisq.core.trade.Trade;
 import bisq.core.user.User;
-
-import org.bitcoinj.core.Coin;
-
-import javax.inject.Inject;
-
-import java.security.PublicKey;
-
-import java.util.Arrays;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import lombok.extern.slf4j.Slf4j;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
 import io.bisq.common.UserThread;
-import io.bisq.common.crypto.CryptoException;
-import io.bisq.common.crypto.Hash;
-import io.bisq.common.crypto.KeyRing;
-import io.bisq.common.crypto.PubKeyRing;
-import io.bisq.common.crypto.Sig;
+import io.bisq.common.crypto.*;
 import io.bisq.common.handlers.ErrorMessageHandler;
 import io.bisq.common.locale.CurrencyUtil;
 import io.bisq.common.util.MathUtils;
@@ -57,6 +31,15 @@ import io.bisq.common.util.Utilities;
 import io.bisq.network.p2p.BootstrapListener;
 import io.bisq.network.p2p.P2PService;
 import io.bisq.network.p2p.storage.P2PDataStorage;
+import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Coin;
+
+import javax.inject.Inject;
+import java.security.PublicKey;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 @Slf4j
 public class AccountAgeWitnessService {

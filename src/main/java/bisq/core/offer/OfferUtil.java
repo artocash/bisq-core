@@ -22,14 +22,10 @@ import bisq.core.btc.wallet.BsqWalletService;
 import bisq.core.provider.fee.FeeService;
 import bisq.core.user.Preferences;
 import bisq.core.util.CoinUtil;
-
+import io.bisq.common.util.MathUtils;
 import org.bitcoinj.core.Coin;
 
 import javax.annotation.Nullable;
-
-
-
-import io.bisq.common.util.MathUtils;
 
 /**
  * This class holds utility methods for the creation of an Offer.

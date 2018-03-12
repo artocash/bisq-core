@@ -21,18 +21,14 @@ import bisq.core.payment.AccountAgeWitnessService;
 import bisq.core.payment.payload.PaymentAccountPayload;
 import bisq.core.trade.Trade;
 import bisq.core.trade.protocol.TradingPeer;
-
-import java.util.Date;
-
-import lombok.extern.slf4j.Slf4j;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
 import io.bisq.common.crypto.PubKeyRing;
 import io.bisq.common.locale.CurrencyUtil;
 import io.bisq.common.taskrunner.TaskRunner;
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.Date;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 @Slf4j
 public class VerifyPeersAccountAgeWitness extends TradeTask {

@@ -18,16 +18,11 @@
 package bisq.core.alert;
 
 import bisq.core.app.AppOptionKeys;
-
+import com.google.inject.Singleton;
+import io.bisq.common.app.AppModule;
 import org.springframework.core.env.Environment;
 
-import com.google.inject.Singleton;
-
 import static com.google.inject.name.Names.named;
-
-
-
-import io.bisq.common.app.AppModule;
 
 public class AlertModule extends AppModule {
     public AlertModule(Environment environment) {

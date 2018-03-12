@@ -23,17 +23,12 @@ import bisq.core.btc.wallet.TradeWalletService;
 import bisq.core.offer.Offer;
 import bisq.core.offer.OfferBookService;
 import bisq.core.user.User;
-
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.core.Transaction;
-
+import io.bisq.common.taskrunner.Model;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-
-
-
-import io.bisq.common.taskrunner.Model;
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.core.Transaction;
 
 @Slf4j
 @Getter

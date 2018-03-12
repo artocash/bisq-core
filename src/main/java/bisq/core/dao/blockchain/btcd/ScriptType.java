@@ -17,19 +17,14 @@
 
 package bisq.core.dao.blockchain.btcd;
 
-import io.bisq.generated.protobuffer.PB;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonValue;
-
+import io.bisq.common.proto.ProtoUtil;
+import io.bisq.generated.protobuffer.PB;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
-
-
-
-import io.bisq.common.proto.ProtoUtil;
 
 @ToString
 @AllArgsConstructor

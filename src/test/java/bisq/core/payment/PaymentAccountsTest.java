@@ -2,18 +2,15 @@ package bisq.core.payment;
 
 import bisq.core.offer.Offer;
 import bisq.core.payment.payload.PaymentAccountPayload;
-
 import com.google.common.collect.Sets;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.util.Collections;
 import java.util.Set;
 import java.util.function.BiFunction;
-
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;

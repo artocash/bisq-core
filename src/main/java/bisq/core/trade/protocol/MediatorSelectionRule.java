@@ -18,20 +18,16 @@
 package bisq.core.trade.protocol;
 
 import bisq.core.offer.Offer;
+import io.bisq.common.crypto.Hash;
+import io.bisq.network.p2p.NodeAddress;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import lombok.extern.slf4j.Slf4j;
-
 import static com.google.common.base.Preconditions.checkArgument;
-
-
-
-import io.bisq.common.crypto.Hash;
-import io.bisq.network.p2p.NodeAddress;
 
 @Slf4j
 public class MediatorSelectionRule {

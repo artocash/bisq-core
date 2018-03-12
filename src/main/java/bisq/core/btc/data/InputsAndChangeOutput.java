@@ -17,9 +17,8 @@
 
 package bisq.core.btc.data;
 
-import java.util.ArrayList;
-
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 
 import static com.google.common.base.Preconditions.checkArgument;
 

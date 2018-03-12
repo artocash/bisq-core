@@ -20,12 +20,8 @@ package bisq.core.payment;
 import bisq.core.payment.payload.InteracETransferAccountPayload;
 import bisq.core.payment.payload.PaymentAccountPayload;
 import bisq.core.payment.payload.PaymentMethod;
-
-import lombok.EqualsAndHashCode;
-
-
-
 import io.bisq.common.locale.FiatCurrency;
+import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 public final class InteracETransferAccount extends PaymentAccount {

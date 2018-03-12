@@ -2,25 +2,6 @@ package bisq.core.dao.node.lite.network;
 
 import bisq.core.dao.node.messages.GetBsqBlocksResponse;
 import bisq.core.dao.node.messages.NewBsqBlockBroadcastMessage;
-
-import javax.inject.Inject;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import lombok.extern.slf4j.Slf4j;
-
-import org.jetbrains.annotations.Nullable;
-
-
-
 import io.bisq.common.Timer;
 import io.bisq.common.UserThread;
 import io.bisq.common.app.DevEnv;
@@ -28,13 +9,15 @@ import io.bisq.common.app.Log;
 import io.bisq.common.proto.network.NetworkEnvelope;
 import io.bisq.common.util.Tuple2;
 import io.bisq.network.p2p.NodeAddress;
-import io.bisq.network.p2p.network.CloseConnectionReason;
-import io.bisq.network.p2p.network.Connection;
-import io.bisq.network.p2p.network.ConnectionListener;
-import io.bisq.network.p2p.network.MessageListener;
-import io.bisq.network.p2p.network.NetworkNode;
+import io.bisq.network.p2p.network.*;
 import io.bisq.network.p2p.peers.PeerManager;
 import io.bisq.network.p2p.seed.SeedNodeRepository;
+import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.Nullable;
+
+import javax.inject.Inject;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Responsible for requesting BSQ blocks from a full node and for listening to new blocks broadcasted by full nodes.

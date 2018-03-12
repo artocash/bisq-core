@@ -21,40 +21,10 @@ import bisq.core.app.BisqEnvironment;
 import bisq.core.provider.ProvidersRepository;
 import bisq.core.trade.statistics.TradeStatistics2;
 import bisq.core.user.Preferences;
-
-import com.google.inject.Inject;
-
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.SettableFuture;
-
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.ReadOnlyIntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.function.Consumer;
-
-import java.time.Instant;
-
-import lombok.extern.slf4j.Slf4j;
-
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
+import com.google.inject.Inject;
 import io.bisq.common.Timer;
 import io.bisq.common.UserThread;
 import io.bisq.common.app.Log;
@@ -65,6 +35,16 @@ import io.bisq.common.monetary.Price;
 import io.bisq.common.util.MathUtils;
 import io.bisq.common.util.Tuple2;
 import io.bisq.network.http.HttpClient;
+import javafx.beans.property.*;
+import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
+import java.time.Instant;
+import java.util.*;
+import java.util.function.Consumer;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 @Slf4j
 public class PriceFeedService {

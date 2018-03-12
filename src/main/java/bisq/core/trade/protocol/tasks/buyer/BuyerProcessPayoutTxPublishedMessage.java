@@ -23,17 +23,12 @@ import bisq.core.trade.Trade;
 import bisq.core.trade.messages.PayoutTxPublishedMessage;
 import bisq.core.trade.protocol.tasks.TradeTask;
 import bisq.core.util.Validator;
-
-import org.bitcoinj.core.Transaction;
-
+import io.bisq.common.taskrunner.TaskRunner;
 import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Transaction;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import io.bisq.common.taskrunner.TaskRunner;
 
 @Slf4j
 public class BuyerProcessPayoutTxPublishedMessage extends TradeTask {

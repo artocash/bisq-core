@@ -38,47 +38,7 @@ import bisq.core.trade.messages.TradeMessage;
 import bisq.core.trade.statistics.TradeStatisticsManager;
 import bisq.core.user.User;
 import bisq.core.util.Validator;
-
-import org.bitcoinj.core.AddressFormatException;
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.core.InsufficientMoneyException;
-import org.bitcoinj.core.Transaction;
-
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import com.google.common.util.concurrent.FutureCallback;
-
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-
-import javafx.collections.ObservableList;
-
-import org.spongycastle.crypto.params.KeyParameter;
-
-import java.io.File;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import lombok.Setter;
-
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
-
-import static com.google.common.base.Preconditions.checkArgument;
-
-
-
 import io.bisq.common.UserThread;
 import io.bisq.common.app.Log;
 import io.bisq.common.crypto.KeyRing;
@@ -89,12 +49,34 @@ import io.bisq.common.proto.network.NetworkEnvelope;
 import io.bisq.common.proto.persistable.PersistedDataHost;
 import io.bisq.common.proto.persistable.PersistenceProtoResolver;
 import io.bisq.common.storage.Storage;
-import io.bisq.network.p2p.BootstrapListener;
-import io.bisq.network.p2p.DecryptedDirectMessageListener;
-import io.bisq.network.p2p.DecryptedMessageWithPubKey;
-import io.bisq.network.p2p.NodeAddress;
-import io.bisq.network.p2p.P2PService;
+import io.bisq.network.p2p.*;
 import io.bisq.network.p2p.messaging.DecryptedMailboxListener;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.collections.ObservableList;
+import lombok.Setter;
+import org.bitcoinj.core.AddressFormatException;
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.core.InsufficientMoneyException;
+import org.bitcoinj.core.Transaction;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.spongycastle.crypto.params.KeyParameter;
+
+import javax.annotation.Nullable;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 public class TradeManager implements PersistedDataHost {
     private static final Logger log = LoggerFactory.getLogger(TradeManager.class);

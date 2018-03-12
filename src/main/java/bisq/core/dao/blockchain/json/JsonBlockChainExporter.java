@@ -23,37 +23,26 @@ import bisq.core.dao.blockchain.ReadableBsqBlockChain;
 import bisq.core.dao.blockchain.vo.Tx;
 import bisq.core.dao.blockchain.vo.TxOutput;
 import bisq.core.dao.blockchain.vo.TxType;
-
-import org.bitcoinj.core.Utils;
-
-import com.google.inject.Inject;
-
-import javax.inject.Named;
-
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListeningExecutorService;
-
-import java.nio.file.Paths;
-
-import java.io.File;
-import java.io.IOException;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import lombok.extern.slf4j.Slf4j;
-
-import org.jetbrains.annotations.NotNull;
-
-
-
+import com.google.inject.Inject;
 import io.bisq.common.storage.FileUtil;
 import io.bisq.common.storage.JsonFileManager;
 import io.bisq.common.storage.Storage;
 import io.bisq.common.util.Utilities;
+import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Utils;
+import org.jetbrains.annotations.NotNull;
+
+import javax.inject.Named;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class JsonBlockChainExporter {

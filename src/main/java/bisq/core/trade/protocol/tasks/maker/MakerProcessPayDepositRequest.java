@@ -22,19 +22,14 @@ import bisq.core.trade.Trade;
 import bisq.core.trade.messages.PayDepositRequest;
 import bisq.core.trade.protocol.TradingPeer;
 import bisq.core.trade.protocol.tasks.TradeTask;
-
-import org.bitcoinj.core.Coin;
-
+import io.bisq.common.taskrunner.TaskRunner;
 import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Coin;
 
 import static bisq.core.util.Validator.checkTradeId;
 import static bisq.core.util.Validator.nonEmptyStringOf;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import io.bisq.common.taskrunner.TaskRunner;
 
 @Slf4j
 public class MakerProcessPayDepositRequest extends TradeTask {

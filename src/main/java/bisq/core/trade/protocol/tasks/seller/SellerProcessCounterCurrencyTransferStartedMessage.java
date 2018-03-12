@@ -21,14 +21,10 @@ import bisq.core.trade.Trade;
 import bisq.core.trade.messages.CounterCurrencyTransferStartedMessage;
 import bisq.core.trade.protocol.tasks.TradeTask;
 import bisq.core.util.Validator;
-
+import io.bisq.common.taskrunner.TaskRunner;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import io.bisq.common.taskrunner.TaskRunner;
 
 @Slf4j
 public class SellerProcessCounterCurrencyTransferStartedMessage extends TradeTask {

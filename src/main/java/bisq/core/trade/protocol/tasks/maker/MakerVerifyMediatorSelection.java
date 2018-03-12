@@ -20,13 +20,9 @@ package bisq.core.trade.protocol.tasks.maker;
 import bisq.core.trade.Trade;
 import bisq.core.trade.protocol.MediatorSelectionRule;
 import bisq.core.trade.protocol.tasks.TradeTask;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.common.taskrunner.TaskRunner;
 import io.bisq.network.p2p.NodeAddress;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class MakerVerifyMediatorSelection extends TradeTask {

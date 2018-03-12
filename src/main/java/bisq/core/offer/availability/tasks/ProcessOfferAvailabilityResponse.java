@@ -21,14 +21,10 @@ import bisq.core.offer.AvailabilityResult;
 import bisq.core.offer.Offer;
 import bisq.core.offer.availability.OfferAvailabilityModel;
 import bisq.core.offer.messages.OfferAvailabilityResponse;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
-
 import io.bisq.common.taskrunner.Task;
 import io.bisq.common.taskrunner.TaskRunner;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ProcessOfferAvailabilityResponse extends Task<OfferAvailabilityModel> {
     private static final Logger log = LoggerFactory.getLogger(ProcessOfferAvailabilityResponse.class);

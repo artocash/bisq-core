@@ -17,15 +17,13 @@
 
 package bisq.core.btc.wallet;
 
+import com.google.common.collect.Sets;
 import org.bitcoinj.core.Address;
 import org.bitcoinj.core.TransactionOutput;
-
-import com.google.common.collect.Sets;
-
-import java.util.Set;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.Set;
 
 /**
  * We use a specialized version of the CoinSelector based on the DefaultCoinSelector implementation.

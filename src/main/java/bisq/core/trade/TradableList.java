@@ -20,31 +20,23 @@ package bisq.core.trade;
 import bisq.core.btc.wallet.BtcWalletService;
 import bisq.core.offer.OpenOffer;
 import bisq.core.proto.CoreProtoResolver;
-
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.Message;
-
+import io.bisq.common.proto.ProtoUtil;
+import io.bisq.common.proto.ProtobufferException;
+import io.bisq.common.proto.persistable.PersistableEnvelope;
+import io.bisq.common.storage.Storage;
+import io.bisq.generated.protobuffer.PB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-
-
-
-import io.bisq.common.proto.ProtoUtil;
-import io.bisq.common.proto.ProtobufferException;
-import io.bisq.common.proto.persistable.PersistableEnvelope;
-import io.bisq.common.storage.Storage;
 
 @Slf4j
 public final class TradableList<T extends Tradable> implements PersistableEnvelope {

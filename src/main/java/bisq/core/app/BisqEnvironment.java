@@ -23,53 +23,37 @@ import bisq.core.btc.UserAgent;
 import bisq.core.dao.DaoOptionKeys;
 import bisq.core.exceptions.BisqException;
 import bisq.core.filter.FilterManager;
-
-import org.springframework.core.env.JOptCommandLinePropertySource;
-import org.springframework.core.env.MutablePropertySources;
-import org.springframework.core.env.PropertiesPropertySource;
-import org.springframework.core.env.PropertySource;
-import org.springframework.core.env.StandardEnvironment;
-import org.springframework.core.io.DefaultResourceLoader;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.ResourceLoader;
-import org.springframework.core.io.support.ResourcePropertySource;
-
-import org.bitcoinj.core.NetworkParameters;
-
-import joptsimple.OptionSet;
-
-import org.apache.commons.lang3.StringUtils;
-
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Properties;
-
 import ch.qos.logback.classic.Level;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
 import io.bisq.common.CommonOptionKeys;
 import io.bisq.common.app.Version;
 import io.bisq.common.crypto.KeyStorage;
 import io.bisq.common.storage.Storage;
 import io.bisq.common.util.Utilities;
 import io.bisq.network.NetworkOptionKeys;
+import joptsimple.OptionSet;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.bitcoinj.core.NetworkParameters;
+import org.springframework.core.env.*;
+import org.springframework.core.io.DefaultResourceLoader;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.core.io.support.ResourcePropertySource;
+
+import javax.annotation.Nullable;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 @Slf4j
 public class BisqEnvironment extends StandardEnvironment {

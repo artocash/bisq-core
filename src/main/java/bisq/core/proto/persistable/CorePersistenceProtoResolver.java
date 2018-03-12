@@ -10,30 +10,23 @@ import bisq.core.proto.CoreProtoResolver;
 import bisq.core.trade.TradableList;
 import bisq.core.user.PreferencesPayload;
 import bisq.core.user.UserPayload;
-
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.inject.Provider;
-
-import javax.inject.Inject;
-import javax.inject.Named;
-
-import java.io.File;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.common.proto.ProtobufferException;
 import io.bisq.common.proto.network.NetworkProtoResolver;
 import io.bisq.common.proto.persistable.NavigationPath;
 import io.bisq.common.proto.persistable.PersistableEnvelope;
 import io.bisq.common.proto.persistable.PersistenceProtoResolver;
 import io.bisq.common.storage.Storage;
+import io.bisq.generated.protobuffer.PB;
 import io.bisq.network.p2p.peers.peerexchange.PeerList;
 import io.bisq.network.p2p.storage.PersistableNetworkPayloadCollection;
 import io.bisq.network.p2p.storage.PersistedEntryMap;
 import io.bisq.network.p2p.storage.SequenceNumberMap;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.io.File;
 
 @Slf4j
 public class CorePersistenceProtoResolver extends CoreProtoResolver implements PersistenceProtoResolver {

@@ -18,30 +18,22 @@
 package bisq.core.arbitration;
 
 import bisq.core.proto.CoreProtoResolver;
-
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.Message;
-
+import io.bisq.common.proto.ProtoUtil;
+import io.bisq.common.proto.persistable.PersistableEnvelope;
+import io.bisq.common.proto.persistable.PersistedDataHost;
+import io.bisq.common.storage.Storage;
+import io.bisq.generated.protobuffer.PB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import lombok.Getter;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import io.bisq.common.proto.ProtoUtil;
-import io.bisq.common.proto.persistable.PersistableEnvelope;
-import io.bisq.common.proto.persistable.PersistedDataHost;
-import io.bisq.common.storage.Storage;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Slf4j
 @ToString

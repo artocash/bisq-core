@@ -1,15 +1,11 @@
 package bisq.core.arbitration;
 
 import com.google.common.collect.Lists;
-
-import java.util.Date;
-
-import org.junit.Ignore;
-
-
-
 import io.bisq.common.crypto.PubKeyRing;
 import io.bisq.network.p2p.NodeAddress;
+import org.junit.Ignore;
+
+import java.util.Date;
 
 /*
  * This file is part of Bisq.

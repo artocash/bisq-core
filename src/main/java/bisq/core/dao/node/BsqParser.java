@@ -22,24 +22,18 @@ import bisq.core.dao.blockchain.vo.TxInput;
 import bisq.core.dao.node.consensus.BsqBlockController;
 import bisq.core.dao.node.consensus.BsqTxController;
 import bisq.core.dao.node.consensus.GenesisTxController;
+import io.bisq.common.app.DevEnv;
+import lombok.extern.slf4j.Slf4j;
 
+import javax.annotation.concurrent.Immutable;
 import javax.inject.Inject;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.concurrent.Immutable;
-
 import static com.google.common.base.Preconditions.checkArgument;
-
-
-
-import io.bisq.common.app.DevEnv;
 
 
 /**

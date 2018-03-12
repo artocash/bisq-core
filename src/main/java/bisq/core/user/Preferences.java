@@ -6,51 +6,32 @@ import bisq.core.btc.BitcoinNodes;
 import bisq.core.btc.BtcOptionKeys;
 import bisq.core.btc.Restrictions;
 import bisq.core.payment.PaymentAccount;
-
-import org.bitcoinj.core.Coin;
-
-import javax.inject.Inject;
-import javax.inject.Named;
-
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.LongProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleLongProperty;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Delegate;
-import lombok.extern.slf4j.Slf4j;
-
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
 import io.bisq.common.GlobalSettings;
-import io.bisq.common.locale.Country;
-import io.bisq.common.locale.CountryUtil;
-import io.bisq.common.locale.CryptoCurrency;
-import io.bisq.common.locale.CurrencyUtil;
-import io.bisq.common.locale.FiatCurrency;
-import io.bisq.common.locale.TradeCurrency;
+import io.bisq.common.locale.*;
 import io.bisq.common.proto.persistable.PersistedDataHost;
 import io.bisq.common.storage.Storage;
 import io.bisq.common.util.Utilities;
 import io.bisq.network.p2p.network.BridgeAddressProvider;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.LongProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import javafx.beans.property.SimpleLongProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Delegate;
+import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Coin;
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.util.*;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 @Slf4j
 public final class Preferences implements PersistedDataHost, BridgeAddressProvider {

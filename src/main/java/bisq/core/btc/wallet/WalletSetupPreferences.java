@@ -21,19 +21,15 @@ import bisq.core.btc.BitcoinNodes;
 import bisq.core.btc.BitcoinNodes.BitcoinNodesOption;
 import bisq.core.btc.BitcoinNodes.BtcNode;
 import bisq.core.user.Preferences;
+import io.bisq.common.util.Utilities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import static bisq.core.btc.BitcoinNodes.BitcoinNodesOption.CUSTOM;
-
-
-
-import io.bisq.common.util.Utilities;
 
 
 class WalletSetupPreferences {

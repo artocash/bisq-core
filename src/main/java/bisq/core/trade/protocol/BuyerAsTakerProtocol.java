@@ -32,25 +32,13 @@ import bisq.core.trade.protocol.tasks.buyer.BuyerSetupPayoutTxListener;
 import bisq.core.trade.protocol.tasks.buyer_as_maker.BuyerAsMakerSignPayoutTx;
 import bisq.core.trade.protocol.tasks.buyer_as_taker.BuyerAsTakerCreatesDepositTxInputs;
 import bisq.core.trade.protocol.tasks.buyer_as_taker.BuyerAsTakerSignAndPublishDepositTx;
-import bisq.core.trade.protocol.tasks.taker.CreateTakerFeeTx;
-import bisq.core.trade.protocol.tasks.taker.TakerProcessPublishDepositTxRequest;
-import bisq.core.trade.protocol.tasks.taker.TakerSelectArbitrator;
-import bisq.core.trade.protocol.tasks.taker.TakerSelectMediator;
-import bisq.core.trade.protocol.tasks.taker.TakerSendDepositTxPublishedMessage;
-import bisq.core.trade.protocol.tasks.taker.TakerSendPayDepositRequest;
-import bisq.core.trade.protocol.tasks.taker.TakerVerifyAndSignContract;
-import bisq.core.trade.protocol.tasks.taker.TakerVerifyMakerAccount;
-import bisq.core.trade.protocol.tasks.taker.TakerVerifyMakerFeePayment;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
+import bisq.core.trade.protocol.tasks.taker.*;
 import io.bisq.common.handlers.ErrorMessageHandler;
 import io.bisq.common.handlers.ResultHandler;
 import io.bisq.common.proto.network.NetworkEnvelope;
 import io.bisq.network.p2p.MailboxMessage;
 import io.bisq.network.p2p.NodeAddress;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class BuyerAsTakerProtocol extends TradeProtocol implements BuyerProtocol, TakerProtocol {

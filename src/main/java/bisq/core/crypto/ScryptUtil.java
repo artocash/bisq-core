@@ -1,19 +1,13 @@
 package bisq.core.crypto;
 
 import com.google.protobuf.ByteString;
-
-import org.bitcoinj.crypto.KeyCrypterScrypt;
-import org.bitcoinj.wallet.Protos;
-
-import org.spongycastle.crypto.params.KeyParameter;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
-
 import io.bisq.common.UserThread;
 import io.bisq.common.util.Utilities;
+import org.bitcoinj.crypto.KeyCrypterScrypt;
+import org.bitcoinj.wallet.Protos;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.spongycastle.crypto.params.KeyParameter;
 
 //TODO: Borrowed form BitcoinJ/Lighthouse. Remove Protos dependency, check complete code logic.
 public class ScryptUtil {

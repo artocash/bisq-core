@@ -20,14 +20,10 @@ package bisq.core.payment;
 import bisq.core.payment.payload.PaymentAccountPayload;
 import bisq.core.payment.payload.PaymentMethod;
 import bisq.core.payment.payload.SepaInstantAccountPayload;
-
-import java.util.List;
-
+import io.bisq.common.locale.CountryUtil;
 import lombok.EqualsAndHashCode;
 
-
-
-import io.bisq.common.locale.CountryUtil;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 public final class SepaInstantAccount extends CountryBasedPaymentAccount implements BankAccount {

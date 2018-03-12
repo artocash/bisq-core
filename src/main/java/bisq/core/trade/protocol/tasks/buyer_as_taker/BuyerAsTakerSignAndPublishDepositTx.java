@@ -23,27 +23,20 @@ import bisq.core.btc.wallet.BtcWalletService;
 import bisq.core.trade.Trade;
 import bisq.core.trade.protocol.TradingPeer;
 import bisq.core.trade.protocol.tasks.TradeTask;
-
+import com.google.common.util.concurrent.FutureCallback;
+import io.bisq.common.crypto.Hash;
+import io.bisq.common.taskrunner.TaskRunner;
+import lombok.extern.slf4j.Slf4j;
 import org.bitcoinj.core.Coin;
 import org.bitcoinj.core.Transaction;
-
-import com.google.common.util.concurrent.FutureCallback;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-import lombok.extern.slf4j.Slf4j;
-
-import org.jetbrains.annotations.NotNull;
-
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import io.bisq.common.crypto.Hash;
-import io.bisq.common.taskrunner.TaskRunner;
 
 @Slf4j
 public class BuyerAsTakerSignAndPublishDepositTx extends TradeTask {

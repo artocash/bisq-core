@@ -1,33 +1,7 @@
 package bisq.core.trade.statistics;
 
 import bisq.core.offer.OfferPayload;
-
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.ByteString;
-
-import org.springframework.util.CollectionUtils;
-
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.utils.ExchangeRate;
-import org.bitcoinj.utils.Fiat;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import lombok.Value;
-import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
 import io.bisq.common.app.Capabilities;
 import io.bisq.common.crypto.Hash;
 import io.bisq.common.locale.CurrencyUtil;
@@ -38,9 +12,21 @@ import io.bisq.common.monetary.Volume;
 import io.bisq.common.proto.persistable.PersistableEnvelope;
 import io.bisq.common.util.JsonExclude;
 import io.bisq.common.util.Utilities;
+import io.bisq.generated.protobuffer.PB;
 import io.bisq.network.p2p.storage.payload.CapabilityRequiringPayload;
 import io.bisq.network.p2p.storage.payload.LazyProcessedPayload;
 import io.bisq.network.p2p.storage.payload.PersistableNetworkPayload;
+import lombok.Value;
+import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.utils.ExchangeRate;
+import org.bitcoinj.utils.Fiat;
+import org.springframework.util.CollectionUtils;
+
+import javax.annotation.Nullable;
+import java.util.*;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Serialized size is about 180-210 byte. Nov 2017 we have 5500 objects

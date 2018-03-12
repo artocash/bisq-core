@@ -21,21 +21,15 @@ import bisq.core.btc.AddressEntry;
 import bisq.core.btc.wallet.BtcWalletService;
 import bisq.core.trade.Trade;
 import bisq.core.trade.protocol.tasks.TradeTask;
-
+import com.google.common.base.Preconditions;
+import io.bisq.common.taskrunner.TaskRunner;
+import lombok.extern.slf4j.Slf4j;
 import org.bitcoinj.core.Coin;
 import org.bitcoinj.crypto.DeterministicKey;
 
-import com.google.common.base.Preconditions;
-
 import java.util.Arrays;
 
-import lombok.extern.slf4j.Slf4j;
-
 import static com.google.common.base.Preconditions.checkArgument;
-
-
-
-import io.bisq.common.taskrunner.TaskRunner;
 
 @Slf4j
 public class BuyerAsMakerSignPayoutTx extends TradeTask {

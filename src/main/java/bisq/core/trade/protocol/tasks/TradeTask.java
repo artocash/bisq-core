@@ -19,13 +19,9 @@ package bisq.core.trade.protocol.tasks;
 
 import bisq.core.trade.Trade;
 import bisq.core.trade.protocol.ProcessModel;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.common.taskrunner.Task;
 import io.bisq.common.taskrunner.TaskRunner;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public abstract class TradeTask extends Task<Trade> {

@@ -17,11 +17,8 @@
 
 package bisq.core.util;
 
-import org.bitcoinj.core.Coin;
-
-
-
 import io.bisq.common.util.MathUtils;
+import org.bitcoinj.core.Coin;
 
 public class CoinUtil {
     public static Coin getFeePerBtc(Coin feePerBtc, Coin amount) {

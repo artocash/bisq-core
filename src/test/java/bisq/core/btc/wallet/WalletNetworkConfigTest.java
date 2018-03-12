@@ -1,23 +1,16 @@
 package bisq.core.btc.wallet;
 
+import com.runjva.sourceforge.jsocks.protocol.Socks5Proxy;
+import io.bisq.network.Socks5MultiDiscovery;
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.core.PeerAddress;
-
-import com.runjva.sourceforge.jsocks.protocol.Socks5Proxy;
-
-import java.util.Collections;
-
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Collections;
+
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.verify;
-
-
-
-import io.bisq.network.Socks5MultiDiscovery;
+import static org.mockito.Mockito.*;
 
 public class WalletNetworkConfigTest {
     private static final int MODE = 0;

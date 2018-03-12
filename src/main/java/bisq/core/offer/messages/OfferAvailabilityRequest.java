@@ -17,22 +17,17 @@
 
 package bisq.core.offer.messages;
 
+import io.bisq.common.app.Capabilities;
+import io.bisq.common.app.Version;
+import io.bisq.common.crypto.PubKeyRing;
 import io.bisq.generated.protobuffer.PB;
-
-import java.util.List;
-import java.util.Optional;
-
+import io.bisq.network.p2p.SupportedCapabilitiesMessage;
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 
 import javax.annotation.Nullable;
-
-
-
-import io.bisq.common.app.Capabilities;
-import io.bisq.common.app.Version;
-import io.bisq.common.crypto.PubKeyRing;
-import io.bisq.network.p2p.SupportedCapabilitiesMessage;
+import java.util.List;
+import java.util.Optional;
 
 // We add here the SupportedCapabilitiesMessage interface as that message always predates a direct connection
 // to the trading peer

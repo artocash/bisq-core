@@ -17,12 +17,7 @@
 
 package bisq.core.arbitration;
 
-import bisq.core.arbitration.messages.DisputeCommunicationMessage;
-import bisq.core.arbitration.messages.DisputeMessage;
-import bisq.core.arbitration.messages.DisputeResultMessage;
-import bisq.core.arbitration.messages.OpenNewDisputeMessage;
-import bisq.core.arbitration.messages.PeerOpenedDisputeMessage;
-import bisq.core.arbitration.messages.PeerPublishedDisputePayoutTxMessage;
+import bisq.core.arbitration.messages.*;
 import bisq.core.btc.AddressEntry;
 import bisq.core.btc.exceptions.TransactionVerificationException;
 import bisq.core.btc.exceptions.WalletException;
@@ -36,39 +31,8 @@ import bisq.core.trade.Tradable;
 import bisq.core.trade.Trade;
 import bisq.core.trade.TradeManager;
 import bisq.core.trade.closed.ClosedTradableManager;
-
-import org.bitcoinj.core.AddressFormatException;
-import org.bitcoinj.core.Transaction;
-import org.bitcoinj.crypto.DeterministicKey;
-
-import com.google.inject.Inject;
-
-import javax.inject.Named;
-
 import com.google.common.util.concurrent.FutureCallback;
-
-import javafx.collections.ObservableList;
-
-import java.io.File;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
-import java.util.concurrent.CopyOnWriteArraySet;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import org.jetbrains.annotations.NotNull;
-
-
-
+import com.google.inject.Inject;
 import io.bisq.common.Timer;
 import io.bisq.common.UserThread;
 import io.bisq.common.app.Log;
@@ -81,11 +45,21 @@ import io.bisq.common.proto.network.NetworkEnvelope;
 import io.bisq.common.proto.persistable.PersistedDataHost;
 import io.bisq.common.proto.persistable.PersistenceProtoResolver;
 import io.bisq.common.storage.Storage;
-import io.bisq.network.p2p.BootstrapListener;
-import io.bisq.network.p2p.DecryptedMessageWithPubKey;
-import io.bisq.network.p2p.NodeAddress;
-import io.bisq.network.p2p.P2PService;
-import io.bisq.network.p2p.SendMailboxMessageListener;
+import io.bisq.network.p2p.*;
+import javafx.collections.ObservableList;
+import org.bitcoinj.core.AddressFormatException;
+import org.bitcoinj.core.Transaction;
+import org.bitcoinj.crypto.DeterministicKey;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.inject.Named;
+import java.io.File;
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class DisputeManager implements PersistedDataHost {
     private static final Logger log = LoggerFactory.getLogger(DisputeManager.class);

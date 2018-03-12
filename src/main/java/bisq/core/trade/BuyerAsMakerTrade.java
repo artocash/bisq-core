@@ -23,18 +23,12 @@ import bisq.core.proto.CoreProtoResolver;
 import bisq.core.trade.messages.TradeMessage;
 import bisq.core.trade.protocol.BuyerAsMakerProtocol;
 import bisq.core.trade.protocol.MakerProtocol;
-
-import io.bisq.generated.protobuffer.PB;
-
-import org.bitcoinj.core.Coin;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.common.handlers.ErrorMessageHandler;
 import io.bisq.common.storage.Storage;
+import io.bisq.generated.protobuffer.PB;
 import io.bisq.network.p2p.NodeAddress;
+import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Coin;
 
 @Slf4j
 public final class BuyerAsMakerTrade extends BuyerTrade implements MakerTrade {

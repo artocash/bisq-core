@@ -20,18 +20,6 @@ package bisq.core.app;
 import bisq.core.filter.FilterManager;
 import bisq.core.payment.AccountAgeWitnessService;
 import bisq.core.trade.statistics.TradeStatisticsManager;
-
-import javax.inject.Inject;
-
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-
-import java.util.ArrayList;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.common.crypto.KeyRing;
 import io.bisq.common.proto.persistable.PersistedDataHost;
 import io.bisq.network.crypto.EncryptionService;
@@ -40,6 +28,12 @@ import io.bisq.network.p2p.P2PServiceListener;
 import io.bisq.network.p2p.network.CloseConnectionReason;
 import io.bisq.network.p2p.network.Connection;
 import io.bisq.network.p2p.network.ConnectionListener;
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.inject.Inject;
+import java.util.ArrayList;
 
 @Slf4j
 public class AppSetupWithP2P extends AppSetup {

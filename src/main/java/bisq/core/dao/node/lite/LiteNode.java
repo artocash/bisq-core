@@ -28,24 +28,18 @@ import bisq.core.dao.node.lite.network.LiteNodeNetworkManager;
 import bisq.core.dao.node.messages.GetBsqBlocksResponse;
 import bisq.core.dao.node.messages.NewBsqBlockBroadcastMessage;
 import bisq.core.provider.fee.FeeService;
-
 import com.google.inject.Inject;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
-
-import lombok.extern.slf4j.Slf4j;
-
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-
-
 import io.bisq.common.UserThread;
 import io.bisq.common.handlers.ErrorMessageHandler;
 import io.bisq.network.p2p.P2PService;
 import io.bisq.network.p2p.network.Connection;
+import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * Main class for lite nodes which receive the BSQ transactions from a full node (e.g. seed nodes).

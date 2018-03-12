@@ -23,22 +23,18 @@ import bisq.core.payment.payload.PaymentAccountPayload;
 import bisq.core.trade.Trade;
 import bisq.core.trade.messages.PublishDepositTxRequest;
 import bisq.core.trade.protocol.tasks.TradeTask;
+import io.bisq.common.crypto.Sig;
+import io.bisq.common.taskrunner.TaskRunner;
+import io.bisq.network.p2p.SendMailboxMessageListener;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Optional;
 import java.util.UUID;
 
-import lombok.extern.slf4j.Slf4j;
-
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import io.bisq.common.crypto.Sig;
-import io.bisq.common.taskrunner.TaskRunner;
-import io.bisq.network.p2p.SendMailboxMessageListener;
 
 @Slf4j
 public class MakerSendPublishDepositTxRequest extends TradeTask {

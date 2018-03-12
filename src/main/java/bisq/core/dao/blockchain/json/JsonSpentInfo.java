@@ -18,7 +18,6 @@
 package bisq.core.dao.blockchain.json;
 
 import bisq.core.dao.blockchain.vo.SpentInfo;
-
 import lombok.Value;
 
 @Value

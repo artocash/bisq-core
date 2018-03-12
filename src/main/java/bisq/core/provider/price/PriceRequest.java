@@ -17,22 +17,13 @@
 
 package bisq.core.provider.price;
 
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.ListeningExecutorService;
-import com.google.common.util.concurrent.SettableFuture;
-
-import java.util.Map;
-
-import lombok.extern.slf4j.Slf4j;
-
-import org.jetbrains.annotations.NotNull;
-
-
-
+import com.google.common.util.concurrent.*;
 import io.bisq.common.util.Tuple2;
 import io.bisq.common.util.Utilities;
+import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Map;
 
 @Slf4j
 public class PriceRequest {

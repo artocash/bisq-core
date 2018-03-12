@@ -23,38 +23,22 @@ import bisq.core.dao.blockchain.vo.Tx;
 import bisq.core.dao.blockchain.vo.TxOutput;
 import bisq.core.dao.blockchain.vo.TxType;
 import bisq.core.dao.blockchain.vo.util.TxIdIndexTuple;
-
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.Message;
-
-import org.bitcoinj.core.Coin;
-
-import javax.inject.Inject;
-import javax.inject.Named;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
-
-import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-
-import static com.google.common.base.Preconditions.checkArgument;
-
-
-
 import io.bisq.common.proto.persistable.PersistableEnvelope;
 import io.bisq.common.util.FunctionalReadWriteLock;
 import io.bisq.common.util.Tuple2;
+import io.bisq.generated.protobuffer.PB;
+import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Coin;
+
+import javax.annotation.Nullable;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.util.*;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+
+import static com.google.common.base.Preconditions.checkArgument;
 
 
 /**

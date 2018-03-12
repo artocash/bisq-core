@@ -18,9 +18,6 @@
 package bisq.core.trade.protocol;
 
 import bisq.core.trade.Trade;
-
-
-
 import io.bisq.common.handlers.ErrorMessageHandler;
 import io.bisq.common.handlers.ResultHandler;
 import io.bisq.common.taskrunner.TaskRunner;

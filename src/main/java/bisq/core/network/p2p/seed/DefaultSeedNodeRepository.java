@@ -1,14 +1,11 @@
 package bisq.core.network.p2p.seed;
 
-import javax.inject.Inject;
-
-import java.util.Set;
-import java.util.stream.Stream;
-
-
-
 import io.bisq.network.p2p.NodeAddress;
 import io.bisq.network.p2p.seed.SeedNodeRepository;
+
+import javax.inject.Inject;
+import java.util.Set;
+import java.util.stream.Stream;
 
 public class DefaultSeedNodeRepository implements SeedNodeRepository {
 

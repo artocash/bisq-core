@@ -19,20 +19,12 @@ package bisq.core.btc;
 
 import bisq.core.app.BisqEnvironment;
 import bisq.core.provider.fee.FeeService;
-
-import org.libdohj.params.DashMainNetParams;
-import org.libdohj.params.DashRegTestParams;
-import org.libdohj.params.DashTestNet3Params;
-import org.libdohj.params.LitecoinMainNetParams;
-import org.libdohj.params.LitecoinRegTestParams;
-import org.libdohj.params.LitecoinTestNet3Params;
-
+import lombok.Getter;
 import org.bitcoinj.core.NetworkParameters;
 import org.bitcoinj.params.MainNetParams;
 import org.bitcoinj.params.RegTestParams;
 import org.bitcoinj.params.TestNet3Params;
-
-import lombok.Getter;
+import org.libdohj.params.*;
 
 public enum BaseCurrencyNetwork {
     BTC_MAINNET(MainNetParams.get(), "BTC", "MAINNET", "Bitcoin"),

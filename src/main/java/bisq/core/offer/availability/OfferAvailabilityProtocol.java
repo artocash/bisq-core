@@ -23,11 +23,6 @@ import bisq.core.offer.availability.tasks.SendOfferAvailabilityRequest;
 import bisq.core.offer.messages.OfferAvailabilityResponse;
 import bisq.core.offer.messages.OfferMessage;
 import bisq.core.util.Validator;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.common.Timer;
 import io.bisq.common.UserThread;
 import io.bisq.common.handlers.ErrorMessageHandler;
@@ -35,6 +30,7 @@ import io.bisq.common.handlers.ResultHandler;
 import io.bisq.common.proto.network.NetworkEnvelope;
 import io.bisq.common.taskrunner.TaskRunner;
 import io.bisq.network.p2p.DecryptedDirectMessageListener;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class OfferAvailabilityProtocol {

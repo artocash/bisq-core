@@ -17,23 +17,17 @@
 
 package bisq.core.dao.blockchain;
 
-import java.io.File;
-
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-
+import io.bisq.common.proto.persistable.PersistenceProtoResolver;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import java.io.File;
+
+import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
-
-
-
-import io.bisq.common.proto.persistable.PersistenceProtoResolver;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({ReadableBsqBlockChain.class, WritableBsqBlockChain.class, PersistenceProtoResolver.class, File.class})

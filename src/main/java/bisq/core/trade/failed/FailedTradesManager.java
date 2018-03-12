@@ -22,27 +22,19 @@ import bisq.core.offer.Offer;
 import bisq.core.provider.price.PriceFeedService;
 import bisq.core.trade.TradableList;
 import bisq.core.trade.Trade;
-
 import com.google.inject.Inject;
-
-import javax.inject.Named;
-
-import javafx.collections.ObservableList;
-
-import java.io.File;
-
-import java.util.Optional;
-import java.util.stream.Stream;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
-
 import io.bisq.common.crypto.KeyRing;
 import io.bisq.common.proto.persistable.PersistedDataHost;
 import io.bisq.common.proto.persistable.PersistenceProtoResolver;
 import io.bisq.common.storage.Storage;
+import javafx.collections.ObservableList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.inject.Named;
+import java.io.File;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 public class FailedTradesManager implements PersistedDataHost {
     private static final Logger log = LoggerFactory.getLogger(FailedTradesManager.class);

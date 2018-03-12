@@ -24,29 +24,22 @@ import bisq.core.btc.wallet.BtcWalletService;
 import bisq.core.dao.proposal.compensation.CompensationAmountException;
 import bisq.core.dao.proposal.compensation.consensus.OpReturnData;
 import bisq.core.provider.fee.FeeService;
-
+import io.bisq.common.crypto.KeyRing;
+import io.bisq.common.util.Utilities;
+import io.bisq.network.p2p.P2PService;
+import org.apache.commons.lang3.StringUtils;
 import org.bitcoinj.core.InsufficientMoneyException;
 import org.bitcoinj.core.Transaction;
 import org.bitcoinj.core.TransactionOutput;
 import org.bitcoinj.crypto.DeterministicKey;
 
 import javax.inject.Inject;
-
-import org.apache.commons.lang3.StringUtils;
-
 import java.security.PublicKey;
-
 import java.util.Date;
 import java.util.UUID;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import io.bisq.common.crypto.KeyRing;
-import io.bisq.common.util.Utilities;
-import io.bisq.network.p2p.P2PService;
 
 public class GenericProposalManager {
     private final P2PService p2PService;

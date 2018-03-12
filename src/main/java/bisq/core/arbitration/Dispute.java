@@ -20,38 +20,24 @@ package bisq.core.arbitration;
 import bisq.core.arbitration.messages.DisputeCommunicationMessage;
 import bisq.core.proto.CoreProtoResolver;
 import bisq.core.trade.Contract;
-
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.ByteString;
-
-import javafx.beans.property.BooleanProperty;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.ReadOnlyBooleanProperty;
-import javafx.beans.property.ReadOnlyObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
-import javafx.beans.property.SimpleObjectProperty;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-import java.util.Date;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-
-
-
 import io.bisq.common.crypto.PubKeyRing;
 import io.bisq.common.proto.ProtoUtil;
 import io.bisq.common.proto.network.NetworkPayload;
 import io.bisq.common.storage.Storage;
 import io.bisq.common.util.Utilities;
+import io.bisq.generated.protobuffer.PB;
+import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.annotation.Nullable;
+import java.util.Date;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Slf4j
 @EqualsAndHashCode

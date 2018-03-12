@@ -17,60 +17,34 @@
 
 package bisq.core.btc.wallet;
 
-import bisq.core.btc.AddressEntry;
-import bisq.core.btc.AddressEntryException;
-import bisq.core.btc.AddressEntryList;
-import bisq.core.btc.InsufficientFundsException;
-import bisq.core.btc.Restrictions;
+import bisq.core.btc.*;
 import bisq.core.btc.exceptions.TransactionVerificationException;
 import bisq.core.btc.exceptions.WalletException;
 import bisq.core.provider.fee.FeeService;
 import bisq.core.user.Preferences;
-
-import org.bitcoinj.core.Address;
-import org.bitcoinj.core.AddressFormatException;
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.core.InsufficientMoneyException;
-import org.bitcoinj.core.Transaction;
-import org.bitcoinj.core.TransactionConfidence;
-import org.bitcoinj.core.TransactionInput;
-import org.bitcoinj.core.TransactionOutPoint;
-import org.bitcoinj.core.TransactionOutput;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.FutureCallback;
+import com.google.common.util.concurrent.Futures;
+import io.bisq.common.handlers.ErrorMessageHandler;
+import org.bitcoinj.core.*;
 import org.bitcoinj.crypto.DeterministicKey;
 import org.bitcoinj.crypto.KeyCrypterScrypt;
 import org.bitcoinj.script.ScriptBuilder;
 import org.bitcoinj.wallet.SendRequest;
 import org.bitcoinj.wallet.Wallet;
-
-import javax.inject.Inject;
-
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableList;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-
-import org.spongycastle.crypto.params.KeyParameter;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
-
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import org.jetbrains.annotations.NotNull;
+import org.spongycastle.crypto.params.KeyParameter;
 
 import javax.annotation.Nullable;
+import javax.inject.Inject;
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import io.bisq.common.handlers.ErrorMessageHandler;
 
 public class BtcWalletService extends WalletService {
     private static final Logger log = LoggerFactory.getLogger(BtcWalletService.class);

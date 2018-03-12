@@ -17,17 +17,13 @@
 
 package bisq.core.dao.blockchain.vo;
 
+import io.bisq.common.proto.persistable.PersistablePayload;
 import io.bisq.generated.protobuffer.PB;
+import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import lombok.Data;
-
-
-
-import io.bisq.common.proto.persistable.PersistablePayload;
 
 @Data
 public class BsqBlock implements PersistablePayload {

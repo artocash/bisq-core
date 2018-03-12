@@ -19,16 +19,12 @@ package bisq.core.offer.availability;
 
 import bisq.core.offer.Offer;
 import bisq.core.offer.messages.OfferAvailabilityResponse;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
-
 import io.bisq.common.crypto.PubKeyRing;
 import io.bisq.common.taskrunner.Model;
 import io.bisq.network.p2p.NodeAddress;
 import io.bisq.network.p2p.P2PService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class OfferAvailabilityModel implements Model {
     private static final Logger log = LoggerFactory.getLogger(OfferAvailabilityModel.class);

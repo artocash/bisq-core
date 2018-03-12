@@ -1,21 +1,15 @@
 package bisq.core.btc.blockchain.providers;
 
-import org.bitcoinj.core.Coin;
-
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
-import javax.inject.Inject;
-
-import java.io.IOException;
-
+import io.bisq.common.app.Log;
+import io.bisq.network.http.HttpClient;
+import org.bitcoinj.core.Coin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
-
-import io.bisq.common.app.Log;
-import io.bisq.network.http.HttpClient;
+import javax.inject.Inject;
+import java.io.IOException;
 
 public class TradeBlockProvider extends BlockchainTxProvider {
     private static final Logger log = LoggerFactory.getLogger(TradeBlockProvider.class);

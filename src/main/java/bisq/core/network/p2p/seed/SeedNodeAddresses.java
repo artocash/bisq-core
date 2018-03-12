@@ -17,6 +17,7 @@
 
 package bisq.core.network.p2p.seed;
 
+import io.bisq.network.p2p.NodeAddress;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Arrays;
@@ -25,10 +26,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
-
-
-import io.bisq.network.p2p.NodeAddress;
 
 class SeedNodeAddresses extends ImmutableSetDecorator<NodeAddress> {
 

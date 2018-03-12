@@ -2,23 +2,17 @@ package bisq.core.payment;
 
 import bisq.core.offer.Offer;
 import bisq.core.payment.payload.PaymentMethod;
-
 import com.google.common.collect.Lists;
-
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
-
+import io.bisq.common.locale.CryptoCurrency;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-
-
-
-import io.bisq.common.locale.CryptoCurrency;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({NationalBankAccount.class, SepaAccount.class, SepaInstantAccount.class, PaymentMethod.class, SameBankAccount.class, SpecificBanksAccount.class})

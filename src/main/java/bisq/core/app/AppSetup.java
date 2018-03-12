@@ -17,15 +17,12 @@
 
 package bisq.core.app;
 
-import javax.inject.Inject;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.common.app.Version;
 import io.bisq.common.crypto.KeyRing;
 import io.bisq.network.crypto.EncryptionService;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.inject.Inject;
 
 @Slf4j
 public abstract class AppSetup {

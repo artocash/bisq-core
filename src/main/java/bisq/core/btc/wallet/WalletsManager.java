@@ -19,27 +19,20 @@ package bisq.core.btc.wallet;
 
 import bisq.core.app.BisqEnvironment;
 import bisq.core.crypto.ScryptUtil;
-
+import com.google.inject.Inject;
+import io.bisq.common.handlers.ExceptionHandler;
+import io.bisq.common.handlers.ResultHandler;
+import io.bisq.common.locale.Res;
 import org.bitcoinj.core.Coin;
 import org.bitcoinj.crypto.KeyCrypter;
 import org.bitcoinj.crypto.KeyCrypterScrypt;
 import org.bitcoinj.wallet.DeterministicSeed;
 import org.bitcoinj.wallet.Wallet;
-
-import com.google.inject.Inject;
-
-import org.spongycastle.crypto.params.KeyParameter;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.spongycastle.crypto.params.KeyParameter;
 
 import javax.annotation.Nullable;
-
-
-
-import io.bisq.common.handlers.ExceptionHandler;
-import io.bisq.common.handlers.ResultHandler;
-import io.bisq.common.locale.Res;
 
 // Convenience class to handle methods applied to several wallets
 public class WalletsManager {

@@ -22,14 +22,9 @@ import bisq.core.dao.blockchain.vo.Tx;
 import bisq.core.dao.blockchain.vo.TxOutput;
 import bisq.core.dao.blockchain.vo.TxType;
 import bisq.core.dao.blockchain.vo.util.TxIdIndexTuple;
-
 import org.bitcoinj.core.Coin;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 public interface ReadableBsqBlockChain {
     int getChainHeadHeight();

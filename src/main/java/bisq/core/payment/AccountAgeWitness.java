@@ -17,29 +17,24 @@
 
 package bisq.core.payment;
 
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.ByteString;
+import io.bisq.common.app.Capabilities;
+import io.bisq.common.proto.persistable.PersistableEnvelope;
+import io.bisq.common.util.Utilities;
+import io.bisq.generated.protobuffer.PB;
+import io.bisq.network.p2p.storage.P2PDataStorage;
+import io.bisq.network.p2p.storage.payload.CapabilityRequiringPayload;
+import io.bisq.network.p2p.storage.payload.DateTolerantPayload;
+import io.bisq.network.p2p.storage.payload.LazyProcessedPayload;
+import io.bisq.network.p2p.storage.payload.PersistableNetworkPayload;
+import lombok.Value;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
-import lombok.Value;
-import lombok.extern.slf4j.Slf4j;
-
-
-
-import io.bisq.common.app.Capabilities;
-import io.bisq.common.proto.persistable.PersistableEnvelope;
-import io.bisq.common.util.Utilities;
-import io.bisq.network.p2p.storage.P2PDataStorage;
-import io.bisq.network.p2p.storage.payload.CapabilityRequiringPayload;
-import io.bisq.network.p2p.storage.payload.DateTolerantPayload;
-import io.bisq.network.p2p.storage.payload.LazyProcessedPayload;
-import io.bisq.network.p2p.storage.payload.PersistableNetworkPayload;
 
 // Object has 28 raw bytes (33 bytes is size of ProtoBuffer object in storage list, 5 byte extra for list -> totalBytes = 5 + n*33)
 // With 1 000 000 entries we get about 33 MB of data. Old entries will be shipped with the resource file,

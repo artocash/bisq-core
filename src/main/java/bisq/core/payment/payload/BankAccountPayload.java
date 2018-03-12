@@ -17,13 +17,9 @@
 
 package bisq.core.payment.payload;
 
+import io.bisq.common.locale.BankUtil;
+import io.bisq.common.locale.CountryUtil;
 import io.bisq.generated.protobuffer.PB;
-
-import java.nio.charset.Charset;
-
-import java.util.Map;
-import java.util.Optional;
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,11 +27,9 @@ import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import io.bisq.common.locale.BankUtil;
-import io.bisq.common.locale.CountryUtil;
+import java.nio.charset.Charset;
+import java.util.Map;
+import java.util.Optional;
 
 @EqualsAndHashCode(callSuper = true)
 @Setter

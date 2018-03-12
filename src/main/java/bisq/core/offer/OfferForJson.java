@@ -1,24 +1,18 @@
 package bisq.core.offer;
 
 import bisq.core.payment.payload.PaymentMethod;
-
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.utils.MonetaryFormat;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import java.util.Date;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
-
 import io.bisq.common.locale.CurrencyUtil;
 import io.bisq.common.locale.Res;
 import io.bisq.common.monetary.Price;
 import io.bisq.common.monetary.Volume;
 import io.bisq.common.util.MathUtils;
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.utils.MonetaryFormat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Date;
 
 public class OfferForJson {
     private static final Logger log = LoggerFactory.getLogger(OfferForJson.class);

@@ -21,11 +21,7 @@ import bisq.core.app.BisqEnvironment;
 import bisq.core.dao.node.BsqNode;
 import bisq.core.dao.node.BsqNodeProvider;
 import bisq.core.dao.proposal.ProposalCollectionsManager;
-
 import com.google.inject.Inject;
-
-
-
 import io.bisq.common.handlers.ErrorMessageHandler;
 
 /**

@@ -21,14 +21,11 @@ import bisq.core.dao.proposal.Proposal;
 import bisq.core.dao.proposal.ProposalPayload;
 import bisq.core.dao.proposal.ProposalType;
 import bisq.core.dao.vote.VoteResult;
-
 import io.bisq.generated.protobuffer.PB;
-
 import org.springframework.util.CollectionUtils;
 
-import java.util.Map;
-
 import javax.annotation.Nullable;
+import java.util.Map;
 
 /**
  * Generic proposal for anything not covered by specific proposals.

@@ -20,15 +20,11 @@ package bisq.core.offer.availability.tasks;
 import bisq.core.offer.Offer;
 import bisq.core.offer.availability.OfferAvailabilityModel;
 import bisq.core.offer.messages.OfferAvailabilityRequest;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
-
 import io.bisq.common.taskrunner.Task;
 import io.bisq.common.taskrunner.TaskRunner;
 import io.bisq.network.p2p.SendDirectMessageListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SendOfferAvailabilityRequest extends Task<OfferAvailabilityModel> {
     private static final Logger log = LoggerFactory.getLogger(SendOfferAvailabilityRequest.class);

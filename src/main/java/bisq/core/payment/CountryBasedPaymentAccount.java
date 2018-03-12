@@ -19,17 +19,12 @@ package bisq.core.payment;
 
 import bisq.core.payment.payload.CountryBasedPaymentAccountPayload;
 import bisq.core.payment.payload.PaymentMethod;
-
+import io.bisq.common.locale.Country;
+import io.bisq.common.locale.CountryUtil;
 import lombok.EqualsAndHashCode;
-
 import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
-
-
-
-import io.bisq.common.locale.Country;
-import io.bisq.common.locale.CountryUtil;
 
 @EqualsAndHashCode(callSuper = true)
 public abstract class CountryBasedPaymentAccount extends PaymentAccount {

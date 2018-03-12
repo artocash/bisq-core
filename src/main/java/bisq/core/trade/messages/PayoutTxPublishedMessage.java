@@ -17,20 +17,15 @@
 
 package bisq.core.trade.messages;
 
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.ByteString;
-
-import lombok.EqualsAndHashCode;
-import lombok.Value;
-
-
-
 import io.bisq.common.app.Version;
 import io.bisq.common.proto.network.NetworkEnvelope;
 import io.bisq.common.util.Utilities;
+import io.bisq.generated.protobuffer.PB;
 import io.bisq.network.p2p.MailboxMessage;
 import io.bisq.network.p2p.NodeAddress;
+import lombok.EqualsAndHashCode;
+import lombok.Value;
 
 @EqualsAndHashCode(callSuper = true)
 @Value

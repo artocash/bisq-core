@@ -1,22 +1,18 @@
 package bisq.core.dao.node.messages;
 
+import io.bisq.common.app.Capabilities;
+import io.bisq.common.app.Version;
+import io.bisq.common.proto.network.NetworkEnvelope;
 import io.bisq.generated.protobuffer.PB;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
+import io.bisq.network.p2p.DirectMessage;
+import io.bisq.network.p2p.storage.payload.CapabilityRequiringPayload;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
-
-
-import io.bisq.common.app.Capabilities;
-import io.bisq.common.app.Version;
-import io.bisq.common.proto.network.NetworkEnvelope;
-import io.bisq.network.p2p.DirectMessage;
-import io.bisq.network.p2p.storage.payload.CapabilityRequiringPayload;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Getter

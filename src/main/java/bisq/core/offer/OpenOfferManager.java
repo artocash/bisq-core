@@ -32,35 +32,7 @@ import bisq.core.trade.handlers.TransactionResultHandler;
 import bisq.core.user.Preferences;
 import bisq.core.user.User;
 import bisq.core.util.Validator;
-
-import org.bitcoinj.core.Coin;
-
 import com.google.inject.Inject;
-
-import javax.inject.Named;
-
-import javafx.collections.ObservableList;
-
-import java.io.File;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
 import io.bisq.common.Timer;
 import io.bisq.common.UserThread;
 import io.bisq.common.app.Log;
@@ -71,13 +43,25 @@ import io.bisq.common.proto.network.NetworkEnvelope;
 import io.bisq.common.proto.persistable.PersistedDataHost;
 import io.bisq.common.proto.persistable.PersistenceProtoResolver;
 import io.bisq.common.storage.Storage;
-import io.bisq.network.p2p.BootstrapListener;
-import io.bisq.network.p2p.DecryptedDirectMessageListener;
-import io.bisq.network.p2p.DecryptedMessageWithPubKey;
-import io.bisq.network.p2p.NodeAddress;
-import io.bisq.network.p2p.P2PService;
-import io.bisq.network.p2p.SendDirectMessageListener;
+import io.bisq.network.p2p.*;
 import io.bisq.network.p2p.peers.PeerManager;
+import javafx.collections.ObservableList;
+import org.bitcoinj.core.Coin;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.annotation.Nullable;
+import javax.inject.Named;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 
 public class OpenOfferManager implements PeerManager.Listener, DecryptedDirectMessageListener, PersistedDataHost {

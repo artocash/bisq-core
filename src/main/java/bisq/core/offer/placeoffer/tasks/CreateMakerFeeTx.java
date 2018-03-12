@@ -26,27 +26,20 @@ import bisq.core.btc.wallet.WalletService;
 import bisq.core.offer.Offer;
 import bisq.core.offer.placeoffer.PlaceOfferModel;
 import bisq.core.trade.protocol.ArbitratorSelectionRule;
-
-import org.bitcoinj.core.Address;
-import org.bitcoinj.core.Transaction;
-
 import com.google.common.util.concurrent.FutureCallback;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
 import io.bisq.common.UserThread;
 import io.bisq.common.taskrunner.Task;
 import io.bisq.common.taskrunner.TaskRunner;
 import io.bisq.network.p2p.NodeAddress;
+import org.bitcoinj.core.Address;
+import org.bitcoinj.core.Transaction;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.annotation.Nullable;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 public class CreateMakerFeeTx extends Task<PlaceOfferModel> {
     private static final Logger log = LoggerFactory.getLogger(CreateMakerFeeTx.class);

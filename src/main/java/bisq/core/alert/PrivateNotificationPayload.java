@@ -17,24 +17,18 @@
 
 package bisq.core.alert;
 
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.ByteString;
-
-import java.security.PublicKey;
-
+import io.bisq.common.crypto.Sig;
+import io.bisq.common.proto.network.NetworkPayload;
+import io.bisq.common.util.Utilities;
+import io.bisq.generated.protobuffer.PB;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 import javax.annotation.Nullable;
+import java.security.PublicKey;
 
 import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
-import io.bisq.common.crypto.Sig;
-import io.bisq.common.proto.network.NetworkPayload;
-import io.bisq.common.util.Utilities;
 
 
 @EqualsAndHashCode

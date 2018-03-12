@@ -18,12 +18,11 @@
 package bisq.core.network.p2p.seed;
 
 import com.google.common.collect.ImmutableSet;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Set;
-
-import org.jetbrains.annotations.NotNull;
 
 class ImmutableSetDecorator<T> extends AbstractSet<T> {
     private final Set<T> delegate;

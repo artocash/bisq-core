@@ -22,16 +22,12 @@ import bisq.core.dao.proposal.ProposalCollectionsManager;
 import bisq.core.filter.FilterManager;
 import bisq.core.payment.AccountAgeWitnessService;
 import bisq.core.trade.statistics.TradeStatisticsManager;
-
-import javax.inject.Inject;
-
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.common.crypto.KeyRing;
 import io.bisq.network.crypto.EncryptionService;
 import io.bisq.network.p2p.P2PService;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.inject.Inject;
 
 @Slf4j
 public class AppSetupWithP2PAndDAO extends AppSetupWithP2P {

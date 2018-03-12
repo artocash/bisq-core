@@ -19,9 +19,6 @@ package bisq.core.trade.protocol.tasks;
 
 import bisq.core.trade.Trade;
 import bisq.core.trade.statistics.TradeStatistics2;
-
-
-
 import io.bisq.common.taskrunner.TaskRunner;
 
 public class PublishTradeStatistics extends TradeTask {

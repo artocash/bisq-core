@@ -23,26 +23,16 @@ import bisq.core.arbitration.Mediator;
 import bisq.core.filter.Filter;
 import bisq.core.payment.PaymentAccount;
 import bisq.core.proto.CoreProtoResolver;
-
+import io.bisq.common.proto.ProtoUtil;
+import io.bisq.common.proto.persistable.PersistableEnvelope;
 import io.bisq.generated.protobuffer.PB;
-
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
-
-
-
-import io.bisq.common.proto.ProtoUtil;
-import io.bisq.common.proto.persistable.PersistableEnvelope;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Data

@@ -3,34 +3,22 @@ package bisq.core.user;
 import bisq.core.btc.Restrictions;
 import bisq.core.payment.PaymentAccount;
 import bisq.core.proto.CoreProtoResolver;
-
-import io.bisq.generated.protobuffer.PB;
-
-import com.google.protobuf.Message;
-
 import com.google.common.collect.Maps;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-
-
-
+import com.google.protobuf.Message;
 import io.bisq.common.locale.Country;
 import io.bisq.common.locale.CryptoCurrency;
 import io.bisq.common.locale.FiatCurrency;
 import io.bisq.common.locale.TradeCurrency;
 import io.bisq.common.proto.ProtoUtil;
 import io.bisq.common.proto.persistable.PersistableEnvelope;
+import io.bisq.generated.protobuffer.PB;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
+
+import javax.annotation.Nullable;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 @Data

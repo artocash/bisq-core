@@ -17,10 +17,8 @@
 
 package bisq.core.dao.vote;
 
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.Message;
-
+import io.bisq.generated.protobuffer.PB;
 import lombok.Getter;
 
 @Getter

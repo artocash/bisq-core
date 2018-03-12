@@ -25,20 +25,15 @@ import bisq.core.trade.Contract;
 import bisq.core.trade.Trade;
 import bisq.core.trade.protocol.TradingPeer;
 import bisq.core.trade.protocol.tasks.TradeTask;
-
 import com.google.common.base.Preconditions;
-
-import lombok.extern.slf4j.Slf4j;
-
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
 import io.bisq.common.crypto.Sig;
 import io.bisq.common.taskrunner.TaskRunner;
 import io.bisq.common.util.Utilities;
 import io.bisq.network.p2p.NodeAddress;
+import lombok.extern.slf4j.Slf4j;
+
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 @Slf4j
 public class MakerCreateAndSignContract extends TradeTask {

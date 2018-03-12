@@ -17,11 +17,8 @@
 
 package bisq.core.provider;
 
-import lombok.extern.slf4j.Slf4j;
-
-
-
 import io.bisq.network.http.HttpClient;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public abstract class HttpClientProvider {

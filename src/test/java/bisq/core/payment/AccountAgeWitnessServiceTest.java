@@ -1,29 +1,23 @@
 package bisq.core.payment;
 
+import io.bisq.common.crypto.CryptoException;
+import io.bisq.common.crypto.Sig;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.IOException;
 import java.security.KeyPair;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
 import java.security.PublicKey;
 import java.security.cert.CertificateException;
-
-import java.io.IOException;
-
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-import lombok.extern.slf4j.Slf4j;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-
-
-
-import io.bisq.common.crypto.CryptoException;
-import io.bisq.common.crypto.Sig;
 
 /*
  * This file is part of Bisq.

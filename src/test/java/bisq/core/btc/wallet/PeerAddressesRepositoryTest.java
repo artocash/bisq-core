@@ -1,26 +1,17 @@
 package bisq.core.btc.wallet;
 
 import bisq.core.btc.BitcoinNodes.BtcNode;
-
-import org.bitcoinj.core.PeerAddress;
-
-import com.runjva.sourceforge.jsocks.protocol.Socks5Proxy;
-
 import com.google.common.collect.Lists;
+import com.runjva.sourceforge.jsocks.protocol.Socks5Proxy;
+import org.bitcoinj.core.PeerAddress;
+import org.junit.Test;
 
 import java.util.Collections;
 import java.util.List;
 
-import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.RETURNS_DEEP_STUBS;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class PeerAddressesRepositoryTest {
     @Test

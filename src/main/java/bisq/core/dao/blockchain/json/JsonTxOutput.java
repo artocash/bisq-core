@@ -17,11 +17,8 @@
 
 package bisq.core.dao.blockchain.json;
 
-import lombok.Value;
-
-
-
 import io.bisq.common.app.Version;
+import lombok.Value;
 
 @Value
 public class JsonTxOutput {

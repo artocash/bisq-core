@@ -18,32 +18,23 @@
 package bisq.core.btc;
 
 import bisq.core.app.BisqEnvironment;
-
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.ByteString;
-
-import org.bitcoinj.core.Address;
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.crypto.DeterministicKey;
-
-import java.util.Optional;
-
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.extern.slf4j.Slf4j;
-
-import org.jetbrains.annotations.NotNull;
-
-import javax.annotation.Nullable;
-
-import static com.google.common.base.Preconditions.checkNotNull;
-
-
-
 import io.bisq.common.proto.ProtoUtil;
 import io.bisq.common.proto.persistable.PersistablePayload;
 import io.bisq.common.util.Utilities;
+import io.bisq.generated.protobuffer.PB;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Address;
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.crypto.DeterministicKey;
+import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
+import java.util.Optional;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Every trade use a addressEntry with a dedicated address for all transactions related to the trade.

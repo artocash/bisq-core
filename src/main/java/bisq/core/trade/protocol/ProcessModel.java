@@ -34,36 +34,28 @@ import bisq.core.trade.Trade;
 import bisq.core.trade.TradeManager;
 import bisq.core.trade.messages.TradeMessage;
 import bisq.core.user.User;
-
-import io.bisq.generated.protobuffer.PB;
-
 import com.google.protobuf.ByteString;
-
-import org.bitcoinj.core.Coin;
-import org.bitcoinj.core.Sha256Hash;
-import org.bitcoinj.core.Transaction;
-
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
-import lombok.Getter;
-import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
-
-import javax.annotation.Nullable;
-
-
-
 import io.bisq.common.crypto.KeyRing;
 import io.bisq.common.crypto.PubKeyRing;
 import io.bisq.common.proto.ProtoUtil;
 import io.bisq.common.proto.persistable.PersistablePayload;
 import io.bisq.common.taskrunner.Model;
+import io.bisq.generated.protobuffer.PB;
 import io.bisq.network.p2p.DecryptedMessageWithPubKey;
 import io.bisq.network.p2p.MailboxMessage;
 import io.bisq.network.p2p.NodeAddress;
 import io.bisq.network.p2p.P2PService;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.bitcoinj.core.Coin;
+import org.bitcoinj.core.Sha256Hash;
+import org.bitcoinj.core.Transaction;
+
+import javax.annotation.Nullable;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Getter
 @Slf4j
