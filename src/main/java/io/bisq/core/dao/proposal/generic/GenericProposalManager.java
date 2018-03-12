@@ -89,7 +89,7 @@ public class GenericProposalManager {
             throws InsufficientMoneyException, TransactionVerificationException, WalletException, CompensationAmountException {
 
         GenericProposal compensationRequest = new GenericProposal(genericProposalPayload,
-                feeService.getCreateVoteRequestFee().getValue());
+                feeService.getMakeProposalFee().getValue());
         final Transaction preparedBurnFeeTx = bsqWalletService.getPreparedBurnFeeTx(compensationRequest.getFeeAsCoin());
         //compensationRequest.setFeeTx(preparedBurnFeeTx);
         checkArgument(!preparedBurnFeeTx.getInputs().isEmpty(), "preparedTx inputs must not be empty");

@@ -99,7 +99,7 @@ public class CompensationRequestManager {
         }
 
         CompensationRequest compensationRequest = new CompensationRequest(compensationRequestPayload,
-                feeService.getCreateVoteRequestFee().getValue());
+                feeService.getMakeProposalFee().getValue());
         final Transaction preparedBurnFeeTx = bsqWalletService.getPreparedBurnFeeTx(compensationRequest.getFeeAsCoin());
         //compensationRequest.setFeeTx(preparedBurnFeeTx);
         checkArgument(!preparedBurnFeeTx.getInputs().isEmpty(), "preparedTx inputs must not be empty");

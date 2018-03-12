@@ -202,7 +202,7 @@ public class FeeService {
     }
 
 
-    public Coin getCreateVoteRequestFee() {
+    public Coin getMakeProposalFee() {
         return Coin.valueOf(100);
     }
 

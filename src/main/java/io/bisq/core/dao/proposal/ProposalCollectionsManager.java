@@ -245,14 +245,14 @@ public class ProposalCollectionsManager implements PersistedDataHost, BsqBlockCh
                 proposalListStorage.queueUpForSave(new ProposalList(getAllProposals()), 500);
                 return p2PService.removeData(proposalPayload, true);
             } else {
-                final String msg = "removeVoteRequest called with a Proposal which is outside of the Proposal phase.";
+                final String msg = "removeProposal called with a Proposal which is outside of the Proposal phase.";
                 log.warn(msg);
                 if (DevEnv.isDevMode())
                     throw new RuntimeException(msg);
                 return false;
             }
         } else {
-            final String msg = "removeVoteRequest called for a Proposal which is not ours. That must not happen.";
+            final String msg = "removeProposal called for a Proposal which is not ours. That must not happen.";
             log.error(msg);
             if (DevEnv.isDevMode())
                 throw new RuntimeException(msg);
@@ -303,9 +303,9 @@ public class ProposalCollectionsManager implements PersistedDataHost, BsqBlockCh
     private Proposal getProposal(ProposalPayload proposalPayload) {
         switch (proposalPayload.getType()) {
             case COMPENSATION_REQUEST:
-                return new CompensationRequest(proposalPayload, feeService.getCreateVoteRequestFee().getValue());
+                return new CompensationRequest(proposalPayload, feeService.getMakeProposalFee().getValue());
             case GENERIC:
-                return new GenericProposal(proposalPayload, feeService.getCreateVoteRequestFee().getValue());
+                return new GenericProposal(proposalPayload, feeService.getMakeProposalFee().getValue());
             case CHANGE_PARAM:
                 //TODO
                 throw new RuntimeException("Not implemented yet");
