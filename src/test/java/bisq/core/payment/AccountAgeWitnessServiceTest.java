@@ -47,12 +47,10 @@ public class AccountAgeWitnessServiceTest {
     private KeyPair keypair;
     private AccountAgeWitnessService service;
 
-    static {
-        Utilities.removeCryptographyRestrictions();
-    }
-
     @Before
     public void setup() throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, CryptoException {
+        Utilities.removeCryptographyRestrictions();
+
         service = new AccountAgeWitnessService(null, null, null);
         keypair = Sig.generateKeyPair();
         publicKey = keypair.getPublic();
