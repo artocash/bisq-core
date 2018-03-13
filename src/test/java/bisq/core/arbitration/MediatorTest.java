@@ -17,18 +17,21 @@
 
 package bisq.core.arbitration;
 
-import bisq.common.crypto.PubKeyRing;
 import bisq.network.p2p.NodeAddress;
+
+import bisq.common.crypto.PubKeyRing;
+
 import com.google.common.collect.Lists;
-import org.junit.Ignore;
 
 import java.util.Date;
+
+import org.junit.Ignore;
 
 import static bisq.core.arbitration.ArbitratorTest.getBytes;
 
 public class MediatorTest {
 
-    @Ignore("TODO InvalidKeySpecException at io.bisq.common.crypto.Sig.getPublicKeyFromBytes(Sig.java:135)")
+    @Ignore("TODO InvalidKeySpecException at bisq.common.crypto.Sig.getPublicKeyFromBytes(Sig.java:135)")
     public void testRoundtrip() {
         Mediator Mediator = getMediatorMock();
 
