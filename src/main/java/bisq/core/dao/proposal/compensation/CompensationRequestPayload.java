@@ -112,16 +112,17 @@ public final class CompensationRequestPayload extends ProposalPayload {
         this.bsqAddress = bsqAddress;
     }
 
-    private PB.ProposalPayload.Builder getCompensationRequestPayloadBuilder() {
+    @Override
+    public PB.ProposalPayload.Builder getPayloadBuilder() {
         final PB.CompensationRequestPayload.Builder compensationRequestPayloadBuilder = PB.CompensationRequestPayload.newBuilder()
                 .setBsqAddress(bsqAddress)
                 .setRequestedBsq(requestedBsq);
-        return getProposalPayloadBuilder().setCompensationRequestPayload(compensationRequestPayloadBuilder);
+        return super.getPayloadBuilder().setCompensationRequestPayload(compensationRequestPayloadBuilder);
     }
 
     @Override
     public PB.StoragePayload toProtoMessage() {
-        return PB.StoragePayload.newBuilder().setProposalPayload(getCompensationRequestPayloadBuilder()).build();
+        return PB.StoragePayload.newBuilder().setProposalPayload(getPayloadBuilder()).build();
     }
 
     public static CompensationRequestPayload fromProto(PB.ProposalPayload proto) {

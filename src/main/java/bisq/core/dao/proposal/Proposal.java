@@ -93,7 +93,7 @@ public abstract class Proposal implements PersistablePayload {
     @NotNull
     protected PB.Proposal.Builder getProposalBuilder() {
         final PB.Proposal.Builder builder = PB.Proposal.newBuilder()
-                .setProposalPayload(proposalPayload.getProposalPayloadBuilder())
+                .setProposalPayload(proposalPayload.getPayloadBuilder())
                 .setFee(fee)
                 .setClosed(closed);
 

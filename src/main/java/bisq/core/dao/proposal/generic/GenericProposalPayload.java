@@ -100,14 +100,14 @@ public final class GenericProposalPayload extends ProposalPayload {
                 extraDataMap);
     }
 
-    private PB.ProposalPayload.Builder getGenericProposalPayloadBuilder() {
-        final PB.GenericProposalPayload.Builder compensationRequestPayloadBuilder = PB.GenericProposalPayload.newBuilder();
-        return getProposalPayloadBuilder().setGenericProposalPayload(compensationRequestPayloadBuilder);
+    @Override
+    public PB.ProposalPayload.Builder getPayloadBuilder() {
+        return super.getPayloadBuilder().setGenericProposalPayload(PB.GenericProposalPayload.newBuilder());
     }
 
     @Override
     public PB.StoragePayload toProtoMessage() {
-        return PB.StoragePayload.newBuilder().setProposalPayload(getGenericProposalPayloadBuilder()).build();
+        return PB.StoragePayload.newBuilder().setProposalPayload(getPayloadBuilder()).build();
     }
 
     public static GenericProposalPayload fromProto(PB.ProposalPayload proto) {

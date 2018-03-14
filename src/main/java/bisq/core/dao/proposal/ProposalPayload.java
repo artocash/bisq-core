@@ -141,7 +141,7 @@ public abstract class ProposalPayload implements LazyProcessedPayload, Persistab
         this.extraDataMap = extraDataMap;
     }
 
-    public PB.ProposalPayload.Builder getProposalPayloadBuilder() {
+    public PB.ProposalPayload.Builder getPayloadBuilder() {
         final PB.ProposalPayload.Builder builder = PB.ProposalPayload.newBuilder()
                 .setUid(uid)
                 .setName(name)
@@ -160,7 +160,7 @@ public abstract class ProposalPayload implements LazyProcessedPayload, Persistab
 
     @Override
     public PB.StoragePayload toProtoMessage() {
-        return PB.StoragePayload.newBuilder().setProposalPayload(getProposalPayloadBuilder()).build();
+        return PB.StoragePayload.newBuilder().setProposalPayload(getPayloadBuilder()).build();
     }
 
     //TODO add other proposal types
