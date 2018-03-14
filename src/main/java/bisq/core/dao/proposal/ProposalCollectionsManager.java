@@ -179,11 +179,17 @@ public class ProposalCollectionsManager implements PersistedDataHost, BsqBlockCh
     public void onAllServicesInitialized() {
         p2PService.addHashSetChangedListener(this);
 
-        // At startup the P2PDataStorage initializes earlier, otherwise we get the listener called.
+       /* // At startup the P2PDataStorage initializes earlier, otherwise we get the listener called.
         p2PService.getP2PDataStorage().getMap().values().forEach(e -> {
             final ProtectedStoragePayload protectedStoragePayload = e.getProtectedStoragePayload();
             if (protectedStoragePayload instanceof ProposalPayload)
                 addProposal((ProposalPayload) protectedStoragePayload, false);
+        });*/
+
+        //TODO
+        p2PService.getP2PDataStorage().addPersistableNetworkPayloadMapListener(payload -> {
+            if (payload instanceof ProposalPayload)
+                addProposal((ProposalPayload) payload, true);
         });
 
         // Republish own active voteRequests after a 30 sec. (delay to be better connected)
@@ -254,7 +260,9 @@ public class ProposalCollectionsManager implements PersistedDataHost, BsqBlockCh
             if (isInPhaseOrUnconfirmed(proposalPayload)) {
                 removeFromList(proposal);
                 proposalListStorage.queueUpForSave(new ProposalList(getAllProposals()), 500);
-                return p2PService.removeData(proposalPayload, true);
+                // TODO
+                return true;
+                // return p2PService.removeData(proposalPayload, true);
             } else {
                 final String msg = "removeProposal called with a Proposal which is outside of the Proposal phase.";
                 log.warn(msg);
@@ -281,7 +289,7 @@ public class ProposalCollectionsManager implements PersistedDataHost, BsqBlockCh
     ///////////////////////////////////////////////////////////////////////////////////////////
 
     private void addToP2PNetwork(ProposalPayload proposalPayload) {
-        p2PService.addProtectedStorageEntry(proposalPayload, true);
+        p2PService.addPersistableNetworkPayload(proposalPayload, true);
     }
 
     private boolean isInPhaseOrUnconfirmed(ProposalPayload payload) {

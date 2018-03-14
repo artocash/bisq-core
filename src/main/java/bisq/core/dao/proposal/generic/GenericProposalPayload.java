@@ -66,6 +66,7 @@ public final class GenericProposalPayload extends ProposalPayload {
                 creationDate.getTime(),
                 null,
                 null,
+                null,
                 null);
     }
 
@@ -85,6 +86,7 @@ public final class GenericProposalPayload extends ProposalPayload {
                                    long creationDate,
                                    String signature,
                                    String txId,
+                                   @Nullable byte[] hash,
                                    @Nullable Map<String, String> extraDataMap) {
         super(uid,
                 name,
@@ -97,17 +99,13 @@ public final class GenericProposalPayload extends ProposalPayload {
                 creationDate,
                 signature,
                 txId,
+                hash,
                 extraDataMap);
     }
 
     @Override
     public PB.ProposalPayload.Builder getPayloadBuilder() {
         return super.getPayloadBuilder().setGenericProposalPayload(PB.GenericProposalPayload.newBuilder());
-    }
-
-    @Override
-    public PB.StoragePayload toProtoMessage() {
-        return PB.StoragePayload.newBuilder().setProposalPayload(getPayloadBuilder()).build();
     }
 
     public static GenericProposalPayload fromProto(PB.ProposalPayload proto) {
@@ -122,6 +120,7 @@ public final class GenericProposalPayload extends ProposalPayload {
                 proto.getCreationDate(),
                 proto.getSignature(),
                 proto.getTxId(),
+                proto.getHash().isEmpty() ? null : proto.getHash().toByteArray(),
                 CollectionUtils.isEmpty(proto.getExtraDataMap()) ? null : proto.getExtraDataMap());
     }
 

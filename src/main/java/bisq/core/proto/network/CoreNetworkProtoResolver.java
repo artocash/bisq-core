@@ -29,7 +29,6 @@ import bisq.core.arbitration.messages.PeerPublishedDisputePayoutTxMessage;
 import bisq.core.dao.node.messages.GetBsqBlocksRequest;
 import bisq.core.dao.node.messages.GetBsqBlocksResponse;
 import bisq.core.dao.node.messages.NewBsqBlockBroadcastMessage;
-import bisq.core.dao.proposal.ProposalPayload;
 import bisq.core.filter.Filter;
 import bisq.core.offer.OfferPayload;
 import bisq.core.offer.messages.OfferAvailabilityRequest;
@@ -188,8 +187,6 @@ public class CoreNetworkProtoResolver extends CoreProtoResolver implements Netwo
                     return Mediator.fromProto(proto.getMediator());
                 case FILTER:
                     return Filter.fromProto(proto.getFilter());
-                case PROPOSAL_PAYLOAD:
-                    return ProposalPayload.fromProto(proto.getProposalPayload());
                 case TRADE_STATISTICS:
                     // Still used to convert TradeStatistics data from pre v0.6 versions
                     return TradeStatistics.fromProto(proto.getTradeStatistics());

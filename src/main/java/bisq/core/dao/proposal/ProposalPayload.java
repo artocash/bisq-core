@@ -23,15 +23,18 @@ import bisq.core.dao.proposal.generic.GenericProposalPayload;
 import bisq.network.p2p.NodeAddress;
 import bisq.network.p2p.storage.payload.CapabilityRequiringPayload;
 import bisq.network.p2p.storage.payload.LazyProcessedPayload;
-import bisq.network.p2p.storage.payload.PersistableProtectedPayload;
+import bisq.network.p2p.storage.payload.PersistableNetworkPayload;
 
 import bisq.common.app.Capabilities;
-import bisq.common.app.Version;
+import bisq.common.crypto.Hash;
 import bisq.common.crypto.Sig;
 import bisq.common.proto.ProtobufferException;
+import bisq.common.proto.persistable.PersistableEnvelope;
 import bisq.common.util.JsonExclude;
 
 import io.bisq.generated.protobuffer.PB;
+
+import com.google.protobuf.ByteString;
 
 import org.bitcoinj.core.Utils;
 
@@ -42,8 +45,8 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -51,13 +54,15 @@ import lombok.extern.slf4j.Slf4j;
 import javax.annotation.Nullable;
 
 /**
- * Payload sent over wire as well as it gets persisted, containing all base data for a compensation request
+ * Payload sent over wire as well as it gets persisted, containing all base data for a compensation request.
+ * <p>
+ * We persist all ProposalPayload data in PersistableNetworkPayloadMap. Data size on disk for once item is: 1263 bytes
+ * As there are not 1000s of request we consider that acceptable.
  */
-//TODO requestedBsq and bsqAddress are only relevant for comp.Request. Use ProposalPayload as base class for
-// non comp.Request proposal and create subclass for comp.Request with requestedBsq and bsqAddress
 @Slf4j
 @Data
-public abstract class ProposalPayload implements LazyProcessedPayload, PersistableProtectedPayload, CapabilityRequiringPayload {
+//TODO removed PersistableProtectedPayload
+public abstract class ProposalPayload implements LazyProcessedPayload, PersistableNetworkPayload, PersistableEnvelope, CapabilityRequiringPayload {
     protected final String uid;
     protected final String name;
     protected final String title;
@@ -83,32 +88,13 @@ public abstract class ProposalPayload implements LazyProcessedPayload, Persistab
     @Nullable
     protected Map<String, String> extraDataMap;
 
+    @Nullable
+    private byte[] hash;
+
     // Used just for caching
     @JsonExclude
     @Nullable
     protected transient PublicKey ownerPubKey;
-
-    public ProposalPayload(String uid,
-                           String name,
-                           String title,
-                           String description,
-                           String link,
-                           NodeAddress nodeAddress,
-                           PublicKey ownerPubKey,
-                           Date creationDate) {
-        this(uid,
-                name,
-                title,
-                description,
-                link,
-                nodeAddress.getFullAddress(),
-                Utils.HEX.encode(ownerPubKey.getEncoded()),
-                Version.COMPENSATION_REQUEST_VERSION,
-                creationDate.getTime(),
-                null,
-                null,
-                null);
-    }
 
 
     ///////////////////////////////////////////////////////////////////////////////////////////
@@ -126,6 +112,7 @@ public abstract class ProposalPayload implements LazyProcessedPayload, Persistab
                               long creationDate,
                               String signature,
                               String txId,
+                              @Nullable byte[] hash,
                               @Nullable Map<String, String> extraDataMap) {
         this.uid = uid;
         this.name = name;
@@ -139,6 +126,7 @@ public abstract class ProposalPayload implements LazyProcessedPayload, Persistab
         this.signature = signature;
         this.txId = txId;
         this.extraDataMap = extraDataMap;
+        this.hash = hash;
     }
 
     public PB.ProposalPayload.Builder getPayloadBuilder() {
@@ -154,13 +142,13 @@ public abstract class ProposalPayload implements LazyProcessedPayload, Persistab
                 .setCreationDate(creationDate)
                 .setSignature(signature)
                 .setTxId(txId);
+        Optional.ofNullable(hash).ifPresent(e -> builder.setHash(ByteString.copyFrom(hash)));
         Optional.ofNullable(extraDataMap).ifPresent(builder::putAllExtraData);
         return builder;
     }
 
-    @Override
-    public PB.StoragePayload toProtoMessage() {
-        return PB.StoragePayload.newBuilder().setProposalPayload(getPayloadBuilder()).build();
+    public PB.PersistableNetworkPayload toProtoMessage() {
+        return PB.PersistableNetworkPayload.newBuilder().setProposalPayload(getPayloadBuilder()).build();
     }
 
     //TODO add other proposal types
@@ -180,13 +168,8 @@ public abstract class ProposalPayload implements LazyProcessedPayload, Persistab
     // API
     ///////////////////////////////////////////////////////////////////////////////////////////
 
-    //TODO not needed?
-    @Override
-    public long getTTL() {
-        return TimeUnit.DAYS.toMillis(30);
-    }
-
-    @Override
+    //TODO
+    // @Override
     public PublicKey getOwnerPubKey() {
         if (ownerPubKey == null)
             ownerPubKey = Sig.getPublicKeyFromBytes(Utils.HEX.decode(ownerPubPubKeyAsHex));
@@ -219,4 +202,22 @@ public abstract class ProposalPayload implements LazyProcessedPayload, Persistab
     }
 
     public abstract ProposalType getType();
+
+    @Override
+    public byte[] getHash() {
+        if (hash == null)
+            // We create hash from all fields excluding hash itself.
+            // We handle hash as nullable in PB methods even it is never null. Using getHash() would create a endless
+            // recursion.
+            // We use lazy setting because if called in constructor it would not include the data fields from the
+            // sub classes as super() is called before setting those.
+            this.hash = Hash.getSha256Ripemd160hash(toProtoMessage().toByteArray());
+
+        return hash;
+    }
+
+    @Override
+    public boolean verifyHashSize() {
+        return Objects.requireNonNull(hash).length == 20;
+    }
 }

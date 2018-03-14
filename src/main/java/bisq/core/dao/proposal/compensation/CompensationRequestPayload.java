@@ -71,6 +71,7 @@ public final class CompensationRequestPayload extends ProposalPayload {
                 creationDate.getTime(),
                 null,
                 null,
+                null,
                 null);
         this.requestedBsq = requestedBsq.value;
         this.bsqAddress = bsqAddress;
@@ -94,6 +95,7 @@ public final class CompensationRequestPayload extends ProposalPayload {
                                        long creationDate,
                                        String signature,
                                        String txId,
+                                       @Nullable byte[] hash,
                                        @Nullable Map<String, String> extraDataMap) {
         super(uid,
                 name,
@@ -106,6 +108,7 @@ public final class CompensationRequestPayload extends ProposalPayload {
                 creationDate,
                 signature,
                 txId,
+                hash,
                 extraDataMap);
 
         this.requestedBsq = requestedBsq;
@@ -118,11 +121,6 @@ public final class CompensationRequestPayload extends ProposalPayload {
                 .setBsqAddress(bsqAddress)
                 .setRequestedBsq(requestedBsq);
         return super.getPayloadBuilder().setCompensationRequestPayload(compensationRequestPayloadBuilder);
-    }
-
-    @Override
-    public PB.StoragePayload toProtoMessage() {
-        return PB.StoragePayload.newBuilder().setProposalPayload(getPayloadBuilder()).build();
     }
 
     public static CompensationRequestPayload fromProto(PB.ProposalPayload proto) {
@@ -140,6 +138,7 @@ public final class CompensationRequestPayload extends ProposalPayload {
                 proto.getCreationDate(),
                 proto.getSignature(),
                 proto.getTxId(),
+                proto.getHash().isEmpty() ? null : proto.getHash().toByteArray(),
                 CollectionUtils.isEmpty(proto.getExtraDataMap()) ? null : proto.getExtraDataMap());
     }
 
@@ -156,5 +155,4 @@ public final class CompensationRequestPayload extends ProposalPayload {
     public Coin getRequestedBsq() {
         return Coin.valueOf(requestedBsq);
     }
-
 }
